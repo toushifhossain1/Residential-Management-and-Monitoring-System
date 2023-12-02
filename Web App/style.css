@@ -59,7 +59,14 @@ body {
     cursor: pointer;
 }
 
-
+.btn-custom-grey {
+     /* Use your preferred shade of grey */
+    color: #fff; /* Text color */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #3498db, #e73cde); /* Blue to pink gradient */
+            color: #fff; /* Text color */
+}
 
 
 
