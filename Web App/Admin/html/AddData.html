@@ -41,7 +41,40 @@
 
 
 
-
+    <form action="html/AddFlatOwner.php" method="POST">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header" style="text-align: center;">
+                <b>Flat Owner</b>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><input type="text" name="OwnershipIdentityNumber"
+                        placeholder="OwnershipIdentityNumber" required></li>
+                <li class="list-group-item"><input type="date" name="DateOfOwnership" placeholder="Date Of Ownership"
+                        required></li>
+                <li class="list-group-item"><input type="text" name="FlatOwnerName" placeholder="Name" required></li>
+                <li class="list-group-item"><input type="text" name="FlatOwnerGender" placeholder="Gender" required>
+                </li>
+                <li class="list-group-item"><input type="text" name="FlatOwnerPhoneNo" placeholder="Phone Number"
+                        required>
+                </li>
+                <li class="list-group-item"><input type="text" name="FlatOwnerEmail" placeholder="Email" required></li>
+                <li class="list-group-item"><input type="date" name="FlatOwnerDOB" placeholder="Date Of Birth" required>
+                </li>
+                <li class="list-group-item"><input type="text" name="FlatOwnerNID" placeholder="NID Number" required>
+                </li>
+                <li class="list-group-item"><input type="text" name="FlatNo" placeholder="Flat Number" required>
+                </li>
+                <label for="dropdown">State:</label>
+                <select name="dropdown" id="dropdown">
+                    <option value="SelfLiving">SelfLiving</option>
+                    <option value="Renter">Renter</option>
+                </select>
+                <li class="list-group-item"><input type="text" name="ID" placeholder="ID Number" required>
+                </li>
+                <button type="submit" class="btn btn-primary">Add Rentee</button>
+            </ul>
+        </div>
+    </form>
 
 
 
