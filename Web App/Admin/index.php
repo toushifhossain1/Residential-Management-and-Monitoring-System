@@ -48,8 +48,8 @@
 
     <!-- Page Content  -->
     <div id="content" class="p-4 p-md-5 pt-5">
-      <h2 class="mb-4">Sidebar #04</h2>
-      <p>Lorem ipsum</p>
+      <h2 class="mb-4">Welcome to Admin Panel</h2>
+      <p></p>
     </div>
   </div>
 
