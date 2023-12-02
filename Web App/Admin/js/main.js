@@ -28,7 +28,16 @@ jQuery.noConflict();
 		var content = $('#content');
 
 		if (href === '#') {
-			content.html('<p>Welcome to the Homepage</p>');
+			jQuery.ajax({
+				url: 'html/home.php',
+				type: 'Get',
+				success: function (response) {
+					content.html(response); // Load the retrieved data into #content
+				},
+				error: function (xhr, status, error) {
+					console.error(status + ': ' + error);
+				}
+			})
 		} else if (href === '#add-user') {
 			content.html('<p>Add User Data content goes here</p>');
 		} else if (href === '#alter-user') {
