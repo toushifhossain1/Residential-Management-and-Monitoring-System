@@ -22,7 +22,7 @@ jQuery.noConflict();
 
 
 	$('.list-unstyled.components li a').on('click', function (event) {
-		event.preventDefault(); // Prevent default link behavior
+		event.preventDefault();
 
 		var href = $(this).attr('href');
 		var content = $('#content');
@@ -32,14 +32,23 @@ jQuery.noConflict();
 				url: 'html/home.php',
 				type: 'Get',
 				success: function (response) {
-					content.html(response); // Load the retrieved data into #content
+					content.html(response);
 				},
 				error: function (xhr, status, error) {
 					console.error(status + ': ' + error);
 				}
 			})
 		} else if (href === '#add-user') {
-			content.html('<p>Add User Data content goes here</p>');
+			jQuery.ajax({
+				url: 'html/AddData.html',
+				type: 'GET',
+				success: function (response) {
+					content.html(response);
+				},
+				error: function (xhr, status, error) {
+					console.error(status + ': ' + error);
+				}
+			});
 		} else if (href === '#alter-user') {
 			content.html('<p>Alter User Data content goes here</p>');
 		} else if (href === '#remove-user') {
@@ -48,10 +57,10 @@ jQuery.noConflict();
 			content.html('<p>View User Data content goes here</p>');
 		} else if (href === '#contact') {
 			jQuery.ajax({
-				url: '../Form/FilledUpForms.php', // Path to your PHP file that retrieves and displays data
+				url: '../Form/FilledUpForms.php',
 				type: 'GET',
 				success: function (response) {
-					content.html(response); // Load the retrieved data into #content
+					content.html(response);
 				},
 				error: function (xhr, status, error) {
 					console.error(status + ': ' + error);
