@@ -77,20 +77,25 @@
     }
 
     .payment-details button {
-        background-color: #b3b3b3;
-        color: black;
-        border-radius: 20px;
-        padding: 10px 20px;
-        border: none;
-        cursor: pointer;
-        margin: 0 auto;
-        display: block;
+    background-color: #b3b3b3;
+    color: black;
+    border-radius: 20px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+    height: 50px;
+    width: 35%;
+}
 
+.payment-details button:hover,
+.payment-details button:active {
+    background-color: #d9d9d9; /* Change the background color on hover and click */
+    color: black; /* Change the text color on hover and click */
+}
 
-        height: 50px;
-        width: 35%;
-
-    }
+    
 </style>
 
 <body>
@@ -111,7 +116,7 @@
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="#">Make Payment</a>
+                                <a href="rentee.php">Dash Board</a>
                             </li>
                             <li>
                                 <a href="#">Submit Complain</a>
@@ -242,7 +247,21 @@
 
         </div>
     </div>
+    <script>
+        function increaseAmount() {
+            // Implement logic to increase the amount
+            // For example: document.getElementById('amount').value++;
+        }
 
+        function decreaseAmount() {
+            // Implement logic to decrease the amount
+            // For example: document.getElementById('amount').value--;
+        }
+
+        function submitPayment() {
+            // Implement logic to handle the payment submission
+        }
+    </script>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
