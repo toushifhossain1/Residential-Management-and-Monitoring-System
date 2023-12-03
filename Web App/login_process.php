@@ -1,47 +1,50 @@
 <?php
-session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$servername = "your_server_name";
-$username = "your_username";
-$password = "your_password";
-$database = "residential_management";
+    $UserID = $_POST['UserID'];
+    $Occupation = $_POST['Occupation'];
+    $Password = $_POST['Password'];
 
-$conn = new mysqli($servername, $username, $password, $database);
 
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+
+    $link = mysqli_connect("localhost", "root", "", "rmms");
+    if ($link === false) {
+        die("ERROR: Could not connect. " . mysqli_connect_error());
+    }
+
+    //from HTML
+    //echo "UserID: " . $UserID . "<br>";
+    //echo "Password: " . $Password . "<br>";
+    //echo "Occupation: " . $Occupation . "<br>";
+
+    $sql = "SELECT * FROM `user`;";
+    $results = mysqli_query($link, $sql);
+    $row = mysqli_fetch_assoc($results);
+    //Since there is only one row in the database, therefore  only one row is fetched, for multiple rows run whileloop
+//while($row = mysqli_fetch_assoc($results);) {
+    // $row['attributeName'] will run through the whole tabvle
+//            }
+
+
+    //From Database
+    //echo '<br>';
+    //echo $row['UserID'] . "<br>";
+    //echo $row['Occupation'] . "<br>";
+    //echo $row['Password'] . "<br>";
+
+
+    if ($UserID == $row['UserID'] && $Occupation == $row['Occupation'] && $Password == $row['Password']) {
+        session_start();
+        $_SESSION['UserID'] = $UserID; // Set UserID in session -> this goes to the next page
+        //For Rentee
+        header("Location: rentee/rentee.php");
+    } else {
+        echo 'User id didnot match';
+    }
+
+
+    mysqli_close($link);
+
+
 }
-
-$username = $_POST['username'];
-$password = $_POST['password'];
-$occupation = $_POST['occupation'];
-
-// Perform validation and authentication (you should hash the password in a real-world scenario)
-// ...
-
-// Example redirect to different dashboards based on occupation
-switch ($occupation) {
-    case 'flatowner':
-        header('Location: flatowner_dashboard.php');
-        break;
-    case 'renter':
-        header('Location: renter_dashboard.php');
-        break;
-    case 'rentee':
-        header('Location: rentee_dashboard.php');
-        break;
-    case 'manager':
-        header('Location: manager_dashboard.php');
-        break;
-    case 'guard':
-        header('Location: guard_dashboard.php');
-        break;
-    case 'servant':
-        header('Location: servant_dashboard.php');
-        break;
-    default:
-        echo "Invalid occupation";
-}
-
-$conn->close();
 ?>
