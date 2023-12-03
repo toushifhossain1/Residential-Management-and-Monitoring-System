@@ -13,8 +13,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $sql = "INSERT INTO `renter`(`RenterID`, `LeaseStartDate`, `PaymentMobileNo`, `MonthlyRentAmount`, `PaymentBankAccountNo`) VALUES ('$RenterID','$LeaseStartDate','$PaymentMobileNo',' $MonthlyRentAmount','$PaymentBankAccountNo')";
-    if (mysqli_query($link, $sql)) {
-        echo "Record added successfully.";
+    $sql2 = "INSERT INTO `user`(`UniqueID`, `UserID`, `Occupation`, `Password`) VALUES ('','$RenterID','Renter','$Password')";
+    if (mysqli_query($link, $sql) && mysqli_query($link, $sql2)) {
+        echo "Renter added successfully.";
     } else {
         echo "ERROR: Could not execute $sql. " . mysqli_error($link);
     }
