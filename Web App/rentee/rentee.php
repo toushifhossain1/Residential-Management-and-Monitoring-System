@@ -114,6 +114,11 @@
 	          <li>
               <a href="#">Contact</a>
 	          </li>
+			  <li>
+            <a href="#">
+                <i class="fas fa-sign-out-alt"></i> Sign out
+            </a>
+        </li>
 	        </ul>
 
 	        
