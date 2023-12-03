@@ -26,7 +26,13 @@
             color: #555; /* Text color (grey) */
         }
         
-        
+        h3 {
+        color: blue;
+        /* Blue color for greeting */
+        text-align: center;
+		margin-top: 10px;
+		font-weight:400;
+    }
 
         h1 {
             color: blue; /* Blue color for greeting */
@@ -80,7 +86,7 @@
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="#">Make Payment</a>
+                    <a href="rentee_make_payment.php">Make Payment</a>
                 </li>
                 <li>
                     <a href="#">Submit Complain</a>
@@ -133,17 +139,20 @@
 
 	  <div class="container">
     <h1>Hi, Rentee!</h1>
-
+	<h3><i class="fas fa-book"></i> Rules</h3>
     <div class="rules-container">
+	
         <p><b>New Rules (2023-12-01):</b></p>
         <p>Please keep your room clean and tidy.</p>
     </div>
-
+	<h3><i class="fas fa-exclamation-circle"></i> Complain</h3>
     <div class="complain-container">
+	
         <div class="card">
+		   
             <div class="card-header">
-                <b>Complaint Date:</b> 2023-11-29
-            </div>
+                <b>2023-11-29
+            </div></b> 
             <div class="card-body">
                 <p><b>Complaint:</b> The WiFi is slow.</p>
                 <p><b>Feedback:</b> The WiFi has been upgraded and is now working properly.</p>
@@ -151,7 +160,7 @@
         </div>
         <div class="card">
             <div class="card-header">
-                <b>Complaint Date:</b> 2023-11-30
+                <b>2023-11-30</b> 
             </div>
             <div class="card-body">
                 <p><b>Complaint:</b> The air conditioning is not working.</p>
@@ -159,11 +168,11 @@
             </div>
         </div>
     </div>
-
+    <h3><i class="fas fa-calendar-alt"></i> Servant Work Schedule</h3>
     <div class="servant-work-container">
    
     <div>
-        <p> <b>Servant Work Schedule:</b></p>
+        
         <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>Start Time:</b> 09:00</p>
         <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>End Time:</b> 17:00</p>
     </div>
