@@ -1,16 +1,3 @@
-<?php
-session_start();
-$UserID = $_SESSION['UserID'];
-$link = mysqli_connect("localhost", "root", "", "rmms");
-$sql = "SELECT * FROM `rentee` where RenteeID = $UserID;";
-$results = mysqli_query($link, $sql);
-$row = mysqli_fetch_assoc($results);
-//This code below gives the name of the Rentee
-$RenteeName = $row['RenteeName'];
-//echo $RenteeName;
-
-?>
-
 <!doctype html>
 <html lang="en">
 
@@ -24,7 +11,7 @@ $RenteeName = $row['RenteeName'];
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        integrity="sha384-..." crossorigin="anonymous">
+        integrity="sha384-..." crossorigin="anonymous"> <!-- Add the Font Awesome library -->
 </head>
 <style>
     body,
@@ -41,33 +28,53 @@ $RenteeName = $row['RenteeName'];
         flex-direction: column;
         justify-content: space-between;
         color: #555;
+        /* Text color (grey) */
+    }
+
+    @media (max-width: 767px) {
+        .table-responsive {
+            overflow-x: auto;
+        }
+
+        .table-bordered {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table-bordered th,
+        .table-bordered td {
+            white-space: nowrap;
+        }
     }
 
     h3 {
         color: blue;
+        /* Blue color for greeting */
 
-       
-        margin-top: 10px;
+        margin-top: 30px;
         font-weight: 400;
     }
 
     h1 {
         color: blue;
+        /* Blue color for greeting */
     }
 
     .rules-container,
-    .complain-container,
+
     .servant-work-container {
         border: 1px solid #ccc;
         padding: 10px;
         margin-top: 10px;
         border-radius: 20px;
         background-color: #f8f9fa;
+        /* Light gray background */
     }
 
     .complain-container .card {
         margin-top: 10px;
         background-color: #fff;
+        */
     }
 
     .servant-work-container {
@@ -75,15 +82,19 @@ $RenteeName = $row['RenteeName'];
         padding: 10px;
         margin-top: 10px;
         background-color: #f8f9fa;
+        /* Light gray background */
         display: flex;
         align-items: center;
         justify-content: center;
+        /* Center the content horizontally */
         text-align: center;
+        /* Center the text within the container */
     }
 
     .clock-icon {
         margin-right: 10px;
         font-size: 24px;
+        /* Adjust the size of the clock icon */
     }
 </style>
 
@@ -105,16 +116,14 @@ $RenteeName = $row['RenteeName'];
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="rentee_make_payment.php">Make Payment</a>
+                                <a href="">Propose Decisions </a>
                             </li>
-                            <li>
-                                <a href="#">Submit Complain</a>
-                            </li>
+                            
                             <li>
                                 <a href="#">Update Information</a>
                             </li>
                             <li>
-                                <a href="#">Inform Manager</a>
+                                <a href="#">Assign Task To Manager</a>
                             </li>
                         </ul>
                     </li>
@@ -156,63 +165,76 @@ $RenteeName = $row['RenteeName'];
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-
             <div class="container">
-
-
-
-                <?php
-                echo '<h1>Hi, ' . $RenteeName . ', Rentee!</h1>';
-                ;
-                ?>
-
-
-                <h3><i class="fas fa-book"></i> Rules</h3>
+                <h1>Hi, Renter!</h1>
+                <h3><i class="fas fa-file-alt"></i> Commitee Proposals</h3>
                 <div class="rules-container">
 
-                    <p><b>New Rules (2023-12-01):</b></p>
+                    <p><b>New Proposals(2023-12-01):</b></p>
                     <p>Please keep your room clean and tidy.</p>
                 </div>
-                <h3><i class="fas fa-exclamation-circle"></i> Complain</h3>
+
+
+
+
+
+                <!-- Ongoing Meeting Section with a Users Icon -->
+                <h3><i class="fas fa-users"></i> Tap to Join</h3>
+
+                <!-- resused previous code hence weird class names :p !> -->
                 <div class="complain-container">
-
+                    <!-- Card with Timer and Meeting Link -->
                     <div class="card">
-
-                        <div class="card-header">
-                            <b>2023-11-29
-                        </div></b>
-                        <div class="card-body">
-                            <p><b>Complaint:</b> The WiFi is slow.</p>
-                            <p><b>Feedback:</b> The WiFi has been upgraded and is now working properly.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <b>2023-11-30</b>
-                        </div>
-                        <div class="card-body">
-                            <p><b>Complaint:</b> The air conditioning is not working.</p>
-                            <p><b>Feedback:</b> The air conditioning has been repaired and is now working properly.</p>
+                        <div class="row  mt-2 mb-2 ">
+                            <div class="col-md-4 d-flex align-items-center">
+                                <p class="mb-0"><strong class="text-center"> &nbsp; &nbsp; Ongoing meeting
+                                        (1hr:2m:2s)</strong></p>
+                            </div>
+                            <div class="col-md-8">
+                                <a href="meeting-link" class="btn btn-primary">Join Meeting <i
+                                        class="fas fa-video"></i></a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <h3><i class="fas fa-calendar-alt"></i> Servant Work Schedule</h3>
-                <div class="servant-work-container">
 
-                    <div>
 
-                        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>Start Time:</b> 09:00</p>
-                        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>End Time:</b> 17:00</p>
+
+
+
+                <!-- rent receive table -->
+
+
+                <h3><i class="fas fa-money-check"></i> Rent received</h3>
+
+                <div class="container">
+                    <div class="servant-work-container table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Flat Number</th>
+                                    <th scope="col">Amount</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2023-12-01</td>
+                                    <td>Flat 101</td>
+                                    <td>$1000</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
 
             </div>
-        </div>
+            <script src="path/to/bootstrap.js"></script>
+            <script src="js/jquery.min.js"></script>
+            <script src="js/popper.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/main.js"></script>
 
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
 </body>
 
 </html>
