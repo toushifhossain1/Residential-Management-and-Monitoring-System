@@ -46,7 +46,7 @@ $RenteeName = $row['RenteeName'];
     h3 {
         color: blue;
 
-        text-align: center;
+       
         margin-top: 10px;
         font-weight: 400;
     }
