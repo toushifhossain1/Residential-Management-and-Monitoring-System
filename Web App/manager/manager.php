@@ -86,16 +86,16 @@
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
                 <li>
-                    <a href="rentee_make_payment.php">Make Payment</a>
+                    <a href="rentee_make_payment.php">Assigned task By Flatowners</a>
                 </li>
                 <li>
-                    <a href="#">Submit Complain</a>
+                    <a href="#">Rentee's Complain</a>
                 </li>
                 <li>
                     <a href="#">Update Information</a>
                 </li>
 				<li>
-                    <a href="#">Inform Manager</a>
+                    <a href="#">Inform Flat Owner</a>
                 </li>
 	            </ul>
 	          </li>
@@ -138,37 +138,23 @@
       <div id="content" class="p-4 p-md-5 pt-5">
 
 	  <div class="container">
-    <h1>Hi, Rentee!</h1>
-	<h3><i class="fas fa-book"></i> Rules</h3>
+    <h1>Hi, User!</h1>
+	<h3><i class="fas fa-book"></i> Rules Stated</h3>
     <div class="rules-container">
 	
         <p><b>New Rules (2023-12-01):</b></p>
         <p>Please keep your room clean and tidy.</p>
     </div>
-	<h3><i class="fas fa-exclamation-circle"></i> Complain</h3>
-    <div class="complain-container ">
-	
-        <div class="card">
-		   
-            <div class="card-header">
-                <b>2023-11-29
-            </div></b> 
-            <div class="card-body">
-                <p><b>Complaint:</b> The WiFi is slow.</p>
-                <p><b>Feedback:</b> The WiFi has been upgraded and is now working properly.</p>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header">
-                <b>2023-11-30</b> 
-            </div>
-            <div class="card-body">
-                <p><b>Complaint:</b> The air conditioning is not working.</p>
-                <p><b>Feedback:</b> The air conditioning has been repaired and is now working properly.</p>
-            </div>
-        </div>
-    </div>
-    <h3><i class="fas fa-calendar-alt"></i> Servant Work Schedule</h3>
+	<!--commitee proposals-->
+    <h3><i class="fas fa-file-alt"></i> Commitee Ongoing Proposals</h3>
+                <div class="rules-container">
+
+                    <p><b>New Proposals(2023-12-01):</b></p>
+                    <p>Please keep your room clean and tidy.</p>
+                </div>
+
+
+    <h3><i class="fas fa-calendar-alt"></i> Technician Work Schedule</h3>
     <div class="servant-work-container">
    
     <div>
