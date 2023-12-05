@@ -89,17 +89,18 @@ textarea.complaint-description-box {
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                            <li>
+                        <li>
+                                <a href="rentee.php">Dashboard</a>
+                            </li>
+                        <li>
                                 <a href="rentee_make_payment.php">Make Payment</a>
                             </li>
                             <li>
-                                <a href="#">Submit Complain</a>
+                                <a href="submit_complain.php">Submit Complain</a>
                             </li>
+                           
                             <li>
-                                <a href="#">Update Information</a>
-                            </li>
-                            <li>
-                                <a href="#">Inform Manager</a>
+                                <a href="inform_manager.php">Inform Manager</a>
                             </li>
                         </ul>
                     </li>
@@ -152,7 +153,7 @@ textarea.complaint-description-box {
           renter. Thank you for your help in improving our services.
         </p>
 
-        <form>
+        <form id="complaintForm">
         <div class="form-group">
   <b><label for="complaintDescription">Description of Complaint:</label></b>
   <textarea class="form-control" id="complaintDescription" rows="10" placeholder="Please describe your complaint in detail."></textarea>
@@ -181,7 +182,20 @@ textarea.complaint-description-box {
 
   
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('complaintForm');
+        form.addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the default form submission
 
+            // Clear the form fields
+            form.querySelectorAll('input, textarea').forEach(element => element.value = '');
+
+            // Display an alert message
+            alert('Your complaint has been submitted successfully!');
+        });
+    });
+</script>
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
