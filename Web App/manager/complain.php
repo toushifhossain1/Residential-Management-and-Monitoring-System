@@ -11,62 +11,51 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-..." crossorigin="anonymous"> <!-- Add the Font Awesome library -->
   </head>
-  <style>body, html {
-            height: 100%;
-            margin: 0;
-            background-color: #ece6ff;
-            
-        }
-
-        .container {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            color: #555; /* Text color (grey) */
-        }
+  <style>
         
         h3 {
         color: blue;
         /* Blue color for greeting */
-      
+      text-align: center;
 		margin-top: 20px;
 		font-weight:400;
     }
+    body {
+      padding: 20px;
+    }
 
-        h1 {
-            color: blue; /* Blue color for greeting */
-        }
+    .card {
+      border-radius: 5px;
+      background-color: #f8f9fa;
+      border: 1px solid #ddd;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
 
-        .rules-container,
-        .complain-container,
-        .servant-work-container {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-top: 10px;
-            border-radius: 20px;
-            background-color: #f8f9fa; /* Light gray background */
-        }
+    .card-header {
+      background-color: #f1f1f1;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+    }
 
-        .complain-container .card {
-            margin-top: 10px;
-            background-color: #fff; /* White background for cards */
-        }
+    .card-body {
+      padding: 15px;
+    }
 
-        .servant-work-container {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-top: 10px;
-            background-color: #f8f9fa; /* Light gray background */
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Center the content horizontally */
-            text-align: center; /* Center the text within the container */
-        }
-		.clock-icon {
-            margin-right: 10px;
-            font-size: 24px; /* Adjust the size of the clock icon */
-        }
+    .card-body p {
+      line-height: 1.5;
+    }
+
+    .card-body img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .btn-primary {
+      background-color: #04AA6D;
+      border-color: transparent;
+      color: #fff;
+      margin-left: 5px;
+    }
 
   </style>
   <body>
@@ -85,16 +74,16 @@
 	          <li class="active">
 	            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
 	            <ul class="collapse list-unstyled" id="homeSubmenu">
-                <li>
+              <li>
+                    <a href="manager.php">Dashboard</a>
+                </li>
+              <li>
                     <a href="assigned_task.php">Assigned task By Flatowners</a>
                 </li>
-                <li>
-                    <a href="complain.php">Rentee's Complain</a>
-                </li>
+                
                 <li>
                     <a href="update_information.php">Update Information</a>
                 </li>
-				
 	            </ul>
 	          </li>
 	          <li>
@@ -135,35 +124,57 @@
         <!-- Page Content  -->
       <div id="content" class="p-4 p-md-5 pt-5">
 
-	  <div class="container">
-    <h1>Hi, User!</h1>
-	<h3><i class="fas fa-book"></i> Rules Stated</h3>
-    <div class="rules-container">
-	
-        <p><b>New Rules (2023-12-01):</b></p>
-        <p>Please keep your room clean and tidy.</p>
+      <h3><i class="fas fa-eye"></i> View Complaints</h3>
+
+  <div class="row">
+    <div class="col-md-12 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <strong>Complaint by John Doe</strong>
+          <small class="float-end">Submitted on: 2023-12-05</small>
+        </div>
+        <div class="card-body">
+          <p><strong>Flat Number:</strong> 201</p>
+          <p><strong>Description:</strong> Leaky faucet in kitchen</p>
+          <p><strong>Location:</strong> Apartment 201</p>
+          <img src="https://example.com/images/leaky-faucet.png" class="img-fluid" alt="Leaky faucet image">
+          <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-primary">Mark as Resolved</button>
+            <button class="btn btn-primary">Assign to maintenance</button>
+          </div>
+        </div>
+      </div>
     </div>
-	<!--commitee proposals-->
-    <h3><i class="fas fa-file-alt"></i> Commitee Ongoing Proposals</h3>
-                <div class="rules-container">
 
-                    <p><b>New Proposals(2023-12-01):</b></p>
-                    <p>Please keep your room clean and tidy.</p>
-                </div>
+    <div class="col-md-12 mb-3">
+      <div class="card">
+        <div class="card-header">
+          <strong>Complaint by Jane Doe</strong>
+          <small class="float-end">Submitted on: 2023-12-04</small>
+        </div>
+        <div class="card-body">
+          <p><strong>Flat Number:</strong> 102</p>
+          <p><strong>Description:</strong> Broken window in living room</p>
+          <p><strong>Location:</strong> Apartment 102</p>
+          <img src="https://example.com/images/broken-window.png" class="img-fluid" alt="Broken window image">
+          <div class="d-flex justify-content-end mt-3">
+            <button class="btn btn-primary">Mark as Resolved</button>
+            <button class="btn btn-primary">Assign to maintenance</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
-
-    <h3><i class="fas fa-calendar-alt"></i> Technician Work Schedule</h3>
-    <div class="servant-work-container">
-   
-    <div>
+  </div>
         
-        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>Start Time:</b> 09:00</p>
-        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>End Time:</b> 17:00</p>
-    </div>
+
+
+
+  
 </div>
 
-      </div>
-		</div>
+ 
+
 
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
