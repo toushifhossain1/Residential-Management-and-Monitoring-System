@@ -120,10 +120,10 @@
                             </li>
                             
                             <li>
-                                <a href="#">Update Information</a>
+                                <a href="update_information.php">Update Information</a>
                             </li>
                             <li>
-                                <a href="#">Assign Task To Manager</a>
+                                <a href="assign_task.php">Assign Task To Manager</a>
                             </li>
                         </ul>
                     </li>
