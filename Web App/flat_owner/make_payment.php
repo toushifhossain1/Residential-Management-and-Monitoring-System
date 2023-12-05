@@ -115,17 +115,18 @@
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                                <a href="flat_owner.php">Dashboard</a>
+                            </li>
+                        <li>
+                                <a href="decisions.php">Propose Decisions </a>
+                            </li>
+                            
                             <li>
-                                <a href="rentee.php">Dash Board</a>
+                                <a href="update_information.php">Update Information</a>
                             </li>
                             <li>
-                                <a href="#">Submit Complain</a>
-                            </li>
-                            <li>
-                                <a href="#">Update Information</a>
-                            </li>
-                            <li>
-                                <a href="#">Inform Manager</a>
+                                <a href="assign_task.php">Assign Task To Manager</a>
                             </li>
                         </ul>
                     </li>
@@ -172,15 +173,7 @@
                 <div class="user-selection">
                     <h3>Select User Type</h3>
                     <div class="row mt-3">
-                        <div class="col-md-4">
-                            <div class="user-card">
-                                <img src="images/user.png" alt="User Icon" style="width: 70px;">
-                                <p>User Name 1</p>
-                                <label for="renter">
-                                    <input type="radio" name="userType" id="renter"> Renter
-                                </label>
-                            </div>
-                        </div>
+                        
                         <div class="col-md-4">
                             <div class="user-card">
                                 <img src="images/user.png" alt="User Icon" style="width: 70px;">

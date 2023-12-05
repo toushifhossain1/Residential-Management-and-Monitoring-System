@@ -113,16 +113,16 @@
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="rentee_make_payment.php">Propose Decisions </a>
+                                <a href="decisions.php">Propose Decisions </a>
                             </li>
                             <li>
-                                <a href="#">Make Payment</a>
+                                <a href="make_payment.php">Make Payment</a>
                             </li>
                             <li>
-                                <a href="#">Update Information</a>
+                                <a href="update_information.php">Update Information</a>
                             </li>
                             <li>
-                                <a href="#">Assign Task To Manager</a>
+                                <a href="assign_task.php">Assign Task To Manager</a>
                             </li>
                         </ul>
                     </li>
