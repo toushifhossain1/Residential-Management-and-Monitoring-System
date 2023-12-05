@@ -51,7 +51,7 @@
         color: blue;
         /* Blue color for greeting */
 
-        margin-top: 20px;
+        margin-top: 30px;
         font-weight: 400;
     }
 
@@ -116,7 +116,7 @@
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="decisions.php">Propose Decisions </a>
+                                <a href="renter.php">Dashboard </a>
                             </li>
                             
                             <li>
@@ -165,70 +165,56 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-            <div class="container">
-                <h1>Hi, Renter!</h1>
-                <h3><i class="fas fa-file-alt"></i> Commitee Proposals</h3>
-                <div class="rules-container">
+        <h3><i class="fas fa-gavel"></i> Propose Decision</h3>
 
-                    <p><b>New Proposals(2023-12-01):</b></p>
-                    <p>Please keep your room clean and tidy.</p>
-                </div>
+<form id="decisionForm" action="#">
+  <div class="form-group">
+   <b> <label for="decisionTitle">Decision Title:</label></b>
+    <input type="text" class="form-control" id="decisionTitle" placeholder="Enter a brief title for the decision.">
+  </div>
 
+  <div class="form-group">
+    <b><label for="decisionDescription">Decision Description:</label></b>
+    <textarea class="form-control" id="decisionDescription" rows="5" placeholder="Please describe the decision proposal in detail."></textarea>
+  </div>
 
+  <div class="form-group">
+    <b><label for="decisionBenefits">Decision Benefits:</label></b>
+    <textarea class="form-control" id="decisionBenefits" rows="3" placeholder="List the potential benefits of the proposed decision."></textarea>
+  </div>
 
-
-
-                <!-- Ongoing Meeting Section with a Users Icon -->
-                <h3><i class="fas fa-users"></i> Tap to Join</h3>
-
-                <!-- resused previous code hence weird class names :p !> -->
-                <div class="complain-container">
-                    <!-- Card with Timer and Meeting Link -->
-                    <div class="card">
-                        <div class="row  mt-2 mb-2 ">
-                            <div class="col-md-4 d-flex align-items-center">
-                                <p class="mb-0"><strong class="text-center"> &nbsp; &nbsp; Ongoing meeting
-                                        (1hr:2m:2s)</strong></p>
-                            </div>
-                            <div class="col-md-8">
-                                <a href="meeting-link" class="btn btn-primary">Join Meeting <i
-                                        class="fas fa-video"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+  <div class="form-group">
+    <b><label for="decisionDrawbacks">Decision Drawbacks:</label></b>
+    <textarea class="form-control" id="decisionDrawbacks" rows="3" placeholder="List any potential drawbacks or risks associated with the proposed decision."></textarea>
+  </div>
+  <div class="form-group">
+  <b><label for="decisionDate">Decision Proposal Date:</label><b>
+  <input type="date" class="form-control" id="decisionDate">
+</div>
 
 
+  <button type="submit" class="btn btn-primary">Submit Decision Proposal</button>
+</form>
+</div>
+</div>
+</div>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+const form = document.getElementById('decisionForm');
+form.addEventListener('submit', function(event) {
+event.preventDefault(); // Prevent the default form submission
 
-                <!-- rent receive table -->
+// Clear the form fields
+form.querySelectorAll('input, textarea').forEach(element => element.value = '');
 
-
-                <h3><i class="fas fa-money-check"></i> Rent received</h3>
-
-                <div class="container">
-                    <div class="servant-work-container table-responsive">
-                        <table class="table table-bordered">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Flat Number</th>
-                                    <th scope="col">Amount</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2023-12-01</td>
-                                    <td>Flat 101</td>
-                                    <td>$1000</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-
-            </div>
+// Display an alert message
+alert('Your decision proposal has been submitted successfully!');
+});
+});
+</script>
             <script src="path/to/bootstrap.js"></script>
             <script src="js/jquery.min.js"></script>
             <script src="js/popper.js"></script>
