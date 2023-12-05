@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
 
@@ -16,58 +14,48 @@
         integrity="sha384-..." crossorigin="anonymous">
 </head>
 <style>
-    .form-group {
-  margin-bottom: 15px;
-}
-
-.form-label {
-  font-weight: bold;
-}
-
-.form-control {
-  border: 1px solid #ced4da;
-  padding: 10px;
-}
-
-.form-control:focus {
-  border-color: #495057;
-  outline: none;
-}
-
-.btn-primary {
-  background-color: #198754;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.btn-primary:hover {
-  background-color: #147444;
-}
-
-textarea.complaint-description-box {
-  height: 200px !important;
-}
-
-
-    .btn-primary {
-      background-color: #198754;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .btn-primary:hover {
-      background-color: #147444;
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
     }
     h3 {
         color: blue;
         /* Blue color for greeting */
         text-align: center;
+    }
+    .container {
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    .btn-primary:active {
+  background-color: #198754 !important;
+  border-color: #198754 !important;
+}
+
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .form-label {
+        font-weight: bold;
+    }
+
+    .form-control {
+        border: 1px solid #ced4da;
+        padding: 10px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
     }
     
 </style>
@@ -90,18 +78,15 @@ textarea.complaint-description-box {
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                                <a href="rentee.php">Dashboard</a>
+                                <a href="renter.php">Dashboard</a>
                             </li>
                         <li>
-                                <a href="rentee_make_payment.php">Make Payment</a>
+                                <a href="">Propose Decisions </a>
                             </li>
+                            
                             <li>
-                                <a href="submit_complain.php">Submit Complain</a>
+                                <a href="assign_task.php">Assign Task To Manager</a>
                             </li>
-                            <li>
-                                <a href="submit_complain.php">Update Information</a>
-                            </li>
-                           
                         </ul>
                     </li>
                     <li>
@@ -142,48 +127,47 @@ textarea.complaint-description-box {
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
+           
+                <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-        <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-      <h3><i class="fas fa-bell"></i> Inform Manager</h3>
+                <form id="updateForm">
+  <div class="form-group">
+    <b><label for="leaseStartDate">Lease Start Date:</label></b>
+    <input type="date" class="form-control" id="leaseStartDate" placeholder="Enter your lease start date">
+  </div>
 
-        <p>
-          Please feel free to let us know what problem you are facing or technician help you need,where it is occuring and any picture (if available).
-        </p>
+  <div class="form-group">
+    <b><label for="monthlyRentAmount">Monthly Rent Amount:</label></b>
+    <input type="number" class="form-control" id="monthlyRentAmount" placeholder="Enter your monthly rent amount">
+  </div>
 
-        <form id="complaintForm">
-        <div class="form-group">
-  <b><label for="complaintDescription">Description of Issue:</label></b>
-  <textarea class="form-control" id="complaintDescription" rows="10" placeholder="Please describe your complaint in detail."></textarea>
-</div>
+  <div class="form-group">
+    <b><label for="occupation">Occupation:</label></b>
+    <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation">
+  </div>
+
+  <div class="form-group">
+    <b><label for="paymentMobileNum">Payment Mobile Number:</label></b>
+    <input type="tel" class="form-control" id="paymentMobileNum" placeholder="Enter your payment mobile number">
+  </div>
+
+  <div class="form-group">
+    <b><label for="paymentBankInfo">Payment Account Number:</label></b>
+    <input type="tel" class="form-control" id="paymentAccountNum" placeholder="Enter your payment Account number">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit Update Request</button>
+</form>
 
 
-          <div class="form-group mt-4">
-            <b><label for="complaintLocation">Location of Incident (e.g., flat number, floor number):</label></b>
-            <input type="text" class="form-control" id="complaintLocation" placeholder="Enter the location of the incident.">
-          </div>
+          
 
-          <div class="form-group mt-4">
-           <b> <label for="complaintImage">Upload Image (Optional):</label></b>
-            <input type="file" class="form-control" id="complaintImage">
-          </div>
 
-          <div class="form-group mt-4">
-           <b> <label for="complaintDate">Date of Complaint:</label></b>
-            <input type="date" class="form-control" id="complaintDate">
-          </div>
 
-          <button type="submit" class="btn btn-primary mt-2">Submit </button>
-        </form>
-      </div>
-    </div>
-
-  
-</div>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('complaintForm');
+        </div>
+        <script>
+     document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('updateForm');
   form.addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -191,22 +175,20 @@ textarea.complaint-description-box {
     form.querySelectorAll('input, textarea').forEach(element => element.value = '');
 
     // Display an alert message
-    alert('Your issue has been submitted successfully!');
+    alert('Your update request has been submitted successfully!');
   });
 });
 
-  </script>
+
+    </script>
+
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/main.js"></script>
-        <script
- 
-src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
- 
-integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
- 
-crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+            crossorigin="anonymous"></script>
 
 </body>
 
