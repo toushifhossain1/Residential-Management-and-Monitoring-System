@@ -115,17 +115,18 @@
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                                <a href="rentee.php">Dashboard</a>
+                            </li>
+                        
                             <li>
-                                <a href="rentee.php">Dash Board</a>
+                                <a href="submit_complain.php">Submit Complain</a>
                             </li>
                             <li>
-                                <a href="#">Submit Complain</a>
+                                <a href="submit_complain.php">Update Information</a>
                             </li>
                             <li>
-                                <a href="#">Update Information</a>
-                            </li>
-                            <li>
-                                <a href="#">Inform Manager</a>
+                                <a href="inform_manager.php">Inform Manager</a>
                             </li>
                         </ul>
                     </li>

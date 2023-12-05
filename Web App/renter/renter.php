@@ -51,7 +51,7 @@
         color: blue;
         /* Blue color for greeting */
 
-        margin-top: 30px;
+        margin-top: 20px;
         font-weight: 400;
     }
 
@@ -116,14 +116,14 @@
                             class="dropdown-toggle">Home</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="">Propose Decisions </a>
+                                <a href="decisions.php">Propose Decisions </a>
                             </li>
                             
                             <li>
-                                <a href="#">Update Information</a>
+                                <a href="update_information.php">Update Information</a>
                             </li>
                             <li>
-                                <a href="#">Assign Task To Manager</a>
+                                <a href="assign_task.php">Assign Task To Manager</a>
                             </li>
                         </ul>
                     </li>
