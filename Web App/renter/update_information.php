@@ -81,7 +81,7 @@
                                 <a href="renter.php">Dashboard</a>
                             </li>
                         <li>
-                                <a href="">Propose Decisions </a>
+                                <a href="decisions.php">Propose Decisions </a>
                             </li>
                             
                             <li>
