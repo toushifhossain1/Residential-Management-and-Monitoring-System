@@ -37,27 +37,27 @@
                         <?php
                         $link = mysqli_connect("localhost", "root", "", "rmms");
 
-                        if ($link === false) {
-                            die("Error: Could not connect." . mysqli_connect_error());
+                        if($link === false) {
+                            die("Error: Could not connect.".mysqli_connect_error());
                         }
 
                         $sql = "SELECT * FROM building";
                         $result = mysqli_query($link, $sql);
 
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
+                        if($result) {
+                            while($row = mysqli_fetch_assoc($result)) {
 
-                                echo "<p><b>House Certification:</b> " . $row['HouseCertificationNo'] . "</p>";
-                                echo "<p><b>Building Name:</b> " . $row['BuildingName'] . "<p>";
-                                echo "<p><b>Build Year:</b> " . $row['BuildYear'] . "<p>";
-                                echo "<p><b>RealState Developer:</b> " . $row['RealStateDeveloper'] . "<p>";
-                                echo "<p><b>Insurance No:</b> " . $row['InsuranceNo'] . "<p>";
-                                echo "<p><b>Location:</b> " . $row['Location'] . "<p>";
-                                echo "<p><b>No. Of Floors:</b> " . $row['NoOfFloors'] . "<p>";
+                                echo "<p><b>House Certification:</b> ".$row['HouseCertificationNo']."</p>";
+                                echo "<p><b>Building Name:</b> ".$row['BuildingName']."<p>";
+                                echo "<p><b>Build Year:</b> ".$row['BuildYear']."<p>";
+                                echo "<p><b>RealState Developer:</b> ".$row['RealStateDeveloper']."<p>";
+                                echo "<p><b>Insurance No:</b> ".$row['InsuranceNo']."<p>";
+                                echo "<p><b>Location:</b> ".$row['Location']."<p>";
+                                echo "<p><b>No. Of Floors:</b> ".$row['NoOfFloors']."<p>";
                             }
                             mysqli_free_result($result);
                         } else {
-                            echo "Error: Could not execute $sql." . mysqli_error($link);
+                            echo "Error: Could not execute $sql.".mysqli_error($link);
                         }
 
                         mysqli_close($link);
@@ -82,27 +82,27 @@
                         <?php
                         $link = mysqli_connect("localhost", "root", "", "rmms");
 
-                        if ($link === false) {
-                            die("Error: Could not connect." . mysqli_connect_error());
+                        if($link === false) {
+                            die("Error: Could not connect.".mysqli_connect_error());
                         }
 
                         $sql = "SELECT * FROM building";
                         $result = mysqli_query($link, $sql);
 
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
+                        if($result) {
+                            while($row = mysqli_fetch_assoc($result)) {
 
-                                echo "<p><b>House Certification:</b> " . $row['HouseCertificationNo'] . "</p>";
-                                echo "<p><b>Building Name:</b> " . $row['BuildingName'] . "<p>";
-                                echo "<p><b>Build Year:</b> " . $row['BuildYear'] . "<p>";
-                                echo "<p><b>RealState Developer:</b> " . $row['RealStateDeveloper'] . "<p>";
-                                echo "<p><b>Insurance No:</b> " . $row['InsuranceNo'] . "<p>";
-                                echo "<p><b>Location:</b> " . $row['Location'] . "<p>";
-                                echo "<p><b>No. Of Floors:</b> " . $row['NoOfFloors'] . "<p>";
+                                echo "<p><b>House Certification:</b> ".$row['HouseCertificationNo']."</p>";
+                                echo "<p><b>Building Name:</b> ".$row['BuildingName']."<p>";
+                                echo "<p><b>Build Year:</b> ".$row['BuildYear']."<p>";
+                                echo "<p><b>RealState Developer:</b> ".$row['RealStateDeveloper']."<p>";
+                                echo "<p><b>Insurance No:</b> ".$row['InsuranceNo']."<p>";
+                                echo "<p><b>Location:</b> ".$row['Location']."<p>";
+                                echo "<p><b>No. Of Floors:</b> ".$row['NoOfFloors']."<p>";
                             }
                             mysqli_free_result($result);
                         } else {
-                            echo "Error: Could not execute $sql." . mysqli_error($link);
+                            echo "Error: Could not execute $sql.".mysqli_error($link);
                         }
 
                         mysqli_close($link);
@@ -127,27 +127,27 @@
                         <?php
                         $link = mysqli_connect("localhost", "root", "", "rmms");
 
-                        if ($link === false) {
-                            die("Error: Could not connect." . mysqli_connect_error());
+                        if($link === false) {
+                            die("Error: Could not connect.".mysqli_connect_error());
                         }
 
                         $sql = "SELECT * FROM building";
                         $result = mysqli_query($link, $sql);
 
-                        if ($result) {
-                            while ($row = mysqli_fetch_assoc($result)) {
+                        if($result) {
+                            while($row = mysqli_fetch_assoc($result)) {
 
-                                echo "<p><b>House Certification:</b> " . $row['HouseCertificationNo'] . "</p>";
-                                echo "<p><b>Building Name:</b> " . $row['BuildingName'] . "<p>";
-                                echo "<p><b>Build Year:</b> " . $row['BuildYear'] . "<p>";
-                                echo "<p><b>RealState Developer:</b> " . $row['RealStateDeveloper'] . "<p>";
-                                echo "<p><b>Insurance No:</b> " . $row['InsuranceNo'] . "<p>";
-                                echo "<p><b>Location:</b> " . $row['Location'] . "<p>";
-                                echo "<p><b>No. Of Floors:</b> " . $row['NoOfFloors'] . "<p>";
+                                echo "<p><b>House Certification:</b> ".$row['HouseCertificationNo']."</p>";
+                                echo "<p><b>Building Name:</b> ".$row['BuildingName']."<p>";
+                                echo "<p><b>Build Year:</b> ".$row['BuildYear']."<p>";
+                                echo "<p><b>RealState Developer:</b> ".$row['RealStateDeveloper']."<p>";
+                                echo "<p><b>Insurance No:</b> ".$row['InsuranceNo']."<p>";
+                                echo "<p><b>Location:</b> ".$row['Location']."<p>";
+                                echo "<p><b>No. Of Floors:</b> ".$row['NoOfFloors']."<p>";
                             }
                             mysqli_free_result($result);
                         } else {
-                            echo "Error: Could not execute $sql." . mysqli_error($link);
+                            echo "Error: Could not execute $sql.".mysqli_error($link);
                         }
 
                         mysqli_close($link);
