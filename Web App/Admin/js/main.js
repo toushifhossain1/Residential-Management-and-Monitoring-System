@@ -66,7 +66,7 @@ jQuery.noConflict();
 			});
 		} else if (href === '#contact') {
 			jQuery.ajax({
-				url: '../Form/FilledUpForms.php',
+				url: 'html/Form/FilledUpForms.php',
 				type: 'GET',
 				success: function (response) {
 					content.html(response);
