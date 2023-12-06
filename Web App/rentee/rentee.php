@@ -15,7 +15,7 @@ $RenteeName = $row['RenteeName'];
 <html lang="en">
 
 <head>
-    <title>Sidebar 02</title>
+    <title>Rentee</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -46,7 +46,7 @@ $RenteeName = $row['RenteeName'];
     h3 {
         color: blue;
 
-       
+
         margin-top: 10px;
         font-weight: 400;
     }

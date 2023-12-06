@@ -52,9 +52,18 @@ jQuery.noConflict();
 		} else if (href === '#alter-user') {
 			content.html('<p>Alter User Data content goes here</p>');
 		} else if (href === '#remove-user') {
-			content.html('<p>Remove User Data content goes here</p>');
+			content.html('<p>Remove User Data content goes ere</p>');
 		} else if (href === '#view-user') {
-			content.html('<p>View User Data content goes here</p>');
+			jQuery.ajax({
+				url: 'html/ViewuserData.php',
+				type: 'GET',
+				success: function (response) {
+					content.html(response);
+				},
+				error: function (xhr, status, error) {
+					console.error(status + ': ' + error);
+				}
+			});
 		} else if (href === '#contact') {
 			jQuery.ajax({
 				url: '../Form/FilledUpForms.php',
