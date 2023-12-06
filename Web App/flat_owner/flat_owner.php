@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sidebar 02</title>
+    <title>Flat Owner</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -32,17 +32,20 @@
     }
 
     @media (max-width: 767px) {
-            .table-responsive {
-                overflow-x: auto;
-            }
-            .table-bordered {
-                border-collapse: collapse;
-                width: 100%;
-            }
-            .table-bordered th, .table-bordered td {
-                white-space: nowrap;
-            }
+        .table-responsive {
+            overflow-x: auto;
         }
+
+        .table-bordered {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table-bordered th,
+        .table-bordered td {
+            white-space: nowrap;
+        }
+    }
 
     h3 {
         color: blue;
@@ -176,7 +179,7 @@
 
 
 
-                
+
                 <!-- Ongoing Meeting Section with a Users Icon -->
                 <h3><i class="fas fa-users"></i> Tap to Join</h3>
 
@@ -186,7 +189,8 @@
                     <div class="card">
                         <div class="row  mt-2 mb-2 ">
                             <div class="col-md-4 d-flex align-items-center">
-                                <p class="mb-0"><strong class="text-center"> &nbsp; &nbsp; Ongoing meeting (1hr:2m:2s)</strong></p>
+                                <p class="mb-0"><strong class="text-center"> &nbsp; &nbsp; Ongoing meeting
+                                        (1hr:2m:2s)</strong></p>
                             </div>
                             <div class="col-md-8">
                                 <a href="meeting-link" class="btn btn-primary">Join Meeting <i
@@ -204,21 +208,21 @@
 
 
                 <h3><i class="fas fa-calendar-alt"></i> Servant Work Schedule</h3>
-    <div class="servant-work-container">
-   
-    <div>
-        
-        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>Start Time:</b> 09:00</p>
-        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>End Time:</b> 17:00</p>
-    </div>
+                <div class="servant-work-container">
 
-    </div>
-    <script src="path/to/bootstrap.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-               
+                    <div>
+
+                        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>Start Time:</b> 09:00</p>
+                        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>End Time:</b> 17:00</p>
+                    </div>
+
+                </div>
+                <script src="path/to/bootstrap.js"></script>
+                <script src="js/jquery.min.js"></script>
+                <script src="js/popper.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/main.js"></script>
+
 </body>
 
 </html>
