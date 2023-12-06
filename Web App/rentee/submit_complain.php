@@ -95,10 +95,10 @@ textarea.complaint-description-box {
                         <li>
                                 <a href="rentee_make_payment.php">Make Payment</a>
                             </li>
+                            
                             <li>
-                                <a href="submit_complain.php">Submit Complain</a>
+                                <a href="update_information.php">Update Information</a>
                             </li>
-                           
                             <li>
                                 <a href="inform_manager.php">Inform Manager</a>
                             </li>
