@@ -135,7 +135,7 @@ button:active {
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                         
                             <li>
-                                <a href="#">Update Information</a>
+                                <a href="update_information.php.">Update Information</a>
                             </li>
                             
                         </ul>
