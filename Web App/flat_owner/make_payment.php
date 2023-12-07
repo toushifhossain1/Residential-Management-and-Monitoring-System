@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sidebar 02</title>
+    <title>Payment</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -47,22 +47,23 @@
     }
 
     .payment-options .btn-primary {
-    background-color: transparent;
-    border: none;
-    width: 100%;
-    height: 70px;
-    outline: none; /* Remove the outline on click */
-}
-.payment-options .btn-primary:hover
-{
-    background-color: #d9d9d9 !important;
-    /* Add background color on hover and active (click) */
-}
-.payment-options .btn-primary:active,
-.payment-options .btn-primary:focus 
-{
-    background-color: #d9d9d9 !important;
-}
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        height: 70px;
+        outline: none;
+        /* Remove the outline on click */
+    }
+
+    .payment-options .btn-primary:hover {
+        background-color: #d9d9d9 !important;
+        /* Add background color on hover and active (click) */
+    }
+
+    .payment-options .btn-primary:active,
+    .payment-options .btn-primary:focus {
+        background-color: #d9d9d9 !important;
+    }
 
 
 
@@ -77,25 +78,25 @@
     }
 
     .payment-details button {
-    background-color: #b3b3b3;
-    color: black;
-    border-radius: 20px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin: 0 auto;
-    display: block;
-    height: 50px;
-    width: 35%;
-}
+        background-color: #b3b3b3;
+        color: black;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin: 0 auto;
+        display: block;
+        height: 50px;
+        width: 35%;
+    }
 
-.payment-details button:hover,
-.payment-details button:active {
-    background-color: #d9d9d9; /* Change the background color on hover and click */
-    color: black; /* Change the text color on hover and click */
-}
-
-    
+    .payment-details button:hover,
+    .payment-details button:active {
+        background-color: #d9d9d9;
+        /* Change the background color on hover and click */
+        color: black;
+        /* Change the text color on hover and click */
+    }
 </style>
 
 <body>
@@ -109,24 +110,23 @@
                 </button>
             </div>
             <div class="p-4 pt-5">
-                <h1><a href="index.html" class="logo">RMMS</a></h1>
+                <h1><a href="#0" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle"> <i class="fas fa-money-bill-wave"></i> Make Payment
-                                </a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                                class="fas fa-money-bill-wave"></i> Make Payment
+                        </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                                <a href="flat_owner.php"><i
-                                class="fas fa-home"></i> Homepage</a>
+                            <li>
+                                <a href="flat_owner.php"><i class="fas fa-home"></i> Homepage</a>
                             </li>
-                        
+
                             <li>
                                 <a href="decisions.php">
                                     <i class="fas fa-lightbulb"></i> Propose Decisions
                                 </a>
                             </li>
-                           
+
                             <li>
                                 <a href="update_information.php">
                                     <i class="fas fa-user-edit"></i> Update Information
@@ -140,17 +140,17 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../index.html">
                             <i class="fas fa-info-circle"></i> About
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../Form/ServiceForm.html">
                             <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../logIn.html">
                             <i class="fas fa-sign-out-alt"></i> Sign out
                         </a>
                     </li>
@@ -170,7 +170,7 @@
                 <div class="user-selection">
                     <h3>Select User Type</h3>
                     <div class="row mt-3">
-                        
+
                         <div class="col-md-4">
                             <div class="user-card">
                                 <img src="images/user.png" alt="User Icon" style="width: 70px;">
