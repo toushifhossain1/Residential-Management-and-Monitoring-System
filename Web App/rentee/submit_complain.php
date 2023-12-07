@@ -87,45 +87,42 @@ textarea.complaint-description-box {
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
+                            class="dropdown-toggle"> <i class="fas fa-exclamation-circle"></i> Submit Complain</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                                <a href="rentee.php">Dashboard</a>
+                                <a href="rentee.php"><i
+                                class="fas fa-home"> </i> Homepage</a>
                             </li>
+                        
                         <li>
-                                <a href="rentee_make_payment.php">Make Payment</a>
+                                <a href="rentee_make_payment.php">
+                                    <i class="fas fa-money-bill-wave"></i> Make Payment
+                                </a>
                             </li>
                             
                             <li>
-                                <a href="update_information.php">Update Information</a>
+                                <a href="update_information.php">
+                                    <i class="fas fa-user-edit"></i> Update Information
+                                </a>
                             </li>
                             <li>
-                                <a href="inform_manager.php">Inform Manager</a>
+                                <a href="inform_manager.php">
+                                    <i class="fas fa-info-circle"></i> Inform Manager
+                                </a>
                             </li>
                         </ul>
                     </li>
+                   
                     <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+            <a href="#">
+              <i class="fas fa-info-circle"></i> About
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-envelope"></i> Contact
+            </a>
+          </li>
                     <li>
                         <a href="#">
                             <i class="fas fa-sign-out-alt"></i> Sign out

@@ -19,20 +19,23 @@
         padding: 0;
         font-family: sans-serif;
     }
+
     h3 {
         color: blue;
         /* Blue color for greeting */
         text-align: center;
     }
+
     .container {
         max-width: 500px;
         margin: 0 auto;
         padding: 20px;
     }
+
     .btn-primary:active {
-  background-color: #198754 !important;
-  border-color: #198754 !important;
-}
+        background-color: #198754 !important;
+        border-color: #198754 !important;
+    }
 
 
     .form-group {
@@ -57,7 +60,6 @@
         cursor: pointer;
         margin-top: 10px;
     }
-    
 </style>
 
 <body>
@@ -74,42 +76,36 @@
                 <h1><a href="index.html" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                                class="fas fa-user-edit"></i> Update Information</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                    <a href="manager.php">Dashboard</a>
-                </li>
-              <li>
-                    <a href="assigned_task.php">Assigned task By Flatowners</a>
-                </li>
-                <li>
-                    <a href="complain.php">Rentee's Complain</a>
-                </li>
-                
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
                             <li>
-                                <a href="#">Page 1</a>
+                                <a href="manager.php"><i class="fas fa-home"></i> Homepage</a>
+                            </li>
+                           
+                            
+                            <li>
+                                <a href="assigned_task.php">
+                                    <i class="fas fa-tasks"></i> Assigned Task 
+                                </a>
                             </li>
                             <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
+                                <a href="complain.php">
+                                <i class="fas fa-list-alt"></i> View Complain </a>
+                                   
+                            </li> 
 
+                        </ul>
+                    </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
                     </li>
                     <li>
                         <a href="#">
@@ -127,79 +123,79 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-           
-                <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-                <form id="updateForm">
-                    <div class="form-group">
-                        <b><label for="phoneNum">Phone Number:</label></b>
-                        <input type="tel" class="form-control" id="phoneNum" placeholder="Enter your phone number">
+            <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-
-                    </div>
+            <form id="updateForm">
+                <div class="form-group">
+                    <b><label for="phoneNum">Phone Number:</label></b>
+                    <input type="tel" class="form-control" id="phoneNum" placeholder="Enter your phone number">
 
 
-
-                    <div class="form-group">
-
-
-                       <b> <label for="adress">Address:</label></b>
-
-
-                        <input type="address" class="form-control" id="address" placeholder="Enter your  address">
-
-
-                    </div>
+                </div>
 
 
 
-                    <div class="form-group">
+                <div class="form-group">
 
 
-                       <b> <label for="dob">Date of Birth:</label></b>
+                    <b> <label for="adress">Address:</label></b>
 
 
-                        <input type="date" class="form-control" id="dob">
+                    <input type="address" class="form-control" id="address" placeholder="Enter your  address">
 
 
-                    </div>
-
-
+                </div>
 
 
 
-                    <button type="submit" class="btn btn-primary">Submit Update Request</button>
+                <div class="form-group">
 
 
-                </form>
+                    <b> <label for="dob">Date of Birth:</label></b>
 
 
-          
+                    <input type="date" class="form-control" id="dob">
+
+
+                </div>
+
+
+
+
+
+                <button type="submit" class="btn btn-primary">Submit Update Request</button>
+
+
+            </form>
+
+
+
 
 
 
         </div>
         <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('updateForm').addEventListener('submit', function (event) {
-            event.preventDefault();
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('updateForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
 
-            clearForm();
-            alert('Request has been sent!');
-            
-        });
+                    clearForm();
+                    alert('Request has been sent!');
 
-        function clearForm() {
-            document.getElementById('phoneNum').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('dob').value = '';
-            document.getElementById('occupation').value = '';
-            document.getElementById('paymentMobileNum').value = '';
-            document.getElementById('paymentAccountNum').value = '';
-        }
-    });
+                });
 
-    </script>
+                function clearForm() {
+                    document.getElementById('phoneNum').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('dob').value = '';
+                    document.getElementById('occupation').value = '';
+                    document.getElementById('paymentMobileNum').value = '';
+                    document.getElementById('paymentAccountNum').value = '';
+                }
+            });
+
+        </script>
 
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
