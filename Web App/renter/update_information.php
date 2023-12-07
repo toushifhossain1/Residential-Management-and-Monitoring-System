@@ -19,20 +19,23 @@
         padding: 0;
         font-family: sans-serif;
     }
+
     h3 {
         color: blue;
         /* Blue color for greeting */
         text-align: center;
     }
+
     .container {
         max-width: 500px;
         margin: 0 auto;
         padding: 20px;
     }
+
     .btn-primary:active {
-  background-color: #198754 !important;
-  border-color: #198754 !important;
-}
+        background-color: #198754 !important;
+        border-color: #198754 !important;
+    }
 
 
     .form-group {
@@ -57,7 +60,6 @@
         cursor: pointer;
         margin-top: 10px;
     }
-    
 </style>
 
 <body>
@@ -74,43 +76,36 @@
                 <h1><a href="index.html" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                                class="fas fa-user-edit"></i> Update Information</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                                <a href="renter.php">Dashboard</a>
-                            </li>
-                        <li>
-                                <a href="decisions.php">Propose Decisions </a>
+                            <li>
+                                <a href="renter.php"><i class="fas fa-home"></i> Homepage </a>
                             </li>
                             
                             <li>
-                                <a href="assign_task.php">Assign Task To Manager</a>
+                                <a href="update_information.php">
+                                    <i class="fas fa-user-edit"></i> Update Information
+                                </a>
+                            </li>
+                            <li>
+                                <a href="assign_task.php">
+                                    <i class="fas fa-tasks"></i> Assign Task To Manager
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
                     </li>
-
                     <li>
-                        <a href="#">Contact</a>
-                    </li>
                     <li>
                         <a href="#">
                             <i class="fas fa-sign-out-alt"></i> Sign out
@@ -127,60 +122,64 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-           
-                <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-                <form id="updateForm">
-  <div class="form-group">
-    <b><label for="leaseStartDate">Lease Start Date:</label></b>
-    <input type="date" class="form-control" id="leaseStartDate" placeholder="Enter your lease start date">
-  </div>
+            <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-  <div class="form-group">
-    <b><label for="monthlyRentAmount">Monthly Rent Amount:</label></b>
-    <input type="number" class="form-control" id="monthlyRentAmount" placeholder="Enter your monthly rent amount">
-  </div>
+            <form id="updateForm">
+                <div class="form-group">
+                    <b><label for="leaseStartDate">Lease Start Date:</label></b>
+                    <input type="date" class="form-control" id="leaseStartDate"
+                        placeholder="Enter your lease start date">
+                </div>
 
-  <div class="form-group">
-    <b><label for="occupation">Occupation:</label></b>
-    <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation">
-  </div>
+                <div class="form-group">
+                    <b><label for="monthlyRentAmount">Monthly Rent Amount:</label></b>
+                    <input type="number" class="form-control" id="monthlyRentAmount"
+                        placeholder="Enter your monthly rent amount">
+                </div>
 
-  <div class="form-group">
-    <b><label for="paymentMobileNum">Payment Mobile Number:</label></b>
-    <input type="tel" class="form-control" id="paymentMobileNum" placeholder="Enter your payment mobile number">
-  </div>
+                <div class="form-group">
+                    <b><label for="occupation">Occupation:</label></b>
+                    <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation">
+                </div>
 
-  <div class="form-group">
-    <b><label for="paymentBankInfo">Payment Account Number:</label></b>
-    <input type="tel" class="form-control" id="paymentAccountNum" placeholder="Enter your payment Account number">
-  </div>
+                <div class="form-group">
+                    <b><label for="paymentMobileNum">Payment Mobile Number:</label></b>
+                    <input type="tel" class="form-control" id="paymentMobileNum"
+                        placeholder="Enter your payment mobile number">
+                </div>
 
-  <button type="submit" class="btn btn-primary">Submit Update Request</button>
-</form>
+                <div class="form-group">
+                    <b><label for="paymentBankInfo">Payment Account Number:</label></b>
+                    <input type="tel" class="form-control" id="paymentAccountNum"
+                        placeholder="Enter your payment Account number">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Update Request</button>
+            </form>
 
 
-          
+
 
 
 
         </div>
         <script>
-     document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('updateForm');
-  form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the default form submission
+            document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('updateForm');
+                form.addEventListener('submit', function (event) {
+                    event.preventDefault(); // Prevent the default form submission
 
-    // Clear the form fields
-    form.querySelectorAll('input, textarea').forEach(element => element.value = '');
+                    // Clear the form fields
+                    form.querySelectorAll('input, textarea').forEach(element => element.value = '');
 
-    // Display an alert message
-    alert('Your update request has been submitted successfully!');
-  });
-});
+                    // Display an alert message
+                    alert('Your update request has been submitted successfully!');
+                });
+            });
 
 
-    </script>
+        </script>
 
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>

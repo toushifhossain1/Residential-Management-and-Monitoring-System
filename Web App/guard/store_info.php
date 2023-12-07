@@ -76,41 +76,35 @@
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
+                            class="dropdown-toggle"> <i class="fas fa-database"></i> Store Information</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                                <a href="guard.php">Dashboard</a>
+                                <a href="guard.php"><i
+                                class="fas fa-home"></i> Homepage</a>
                             </li>
-                            <li>
-                                <a href="inform_problem.php">Inform Problem</a>
-                            </li>
-                            
-                            <li>
-                                <a href="update_information.php">Update Information</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
 
+                            <li>
+                                <a href="update_information.php">
+                                    <i class="fas fa-user-edit"></i> Update Information
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inform_problem.php">
+                                    <i class="fas fa-exclamation-triangle"></i> Inform Problem
+                                </a>
+                            </li>
+                           
+                        </ul>
+                    </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
                     </li>
                     <li>
                         <a href="#">

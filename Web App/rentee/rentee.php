@@ -101,44 +101,40 @@ $RenteeName = $row['RenteeName'];
                 <h1><a href="index.html" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
+                                class="fas fa-home"></i> Homepage</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                             <li>
-                                <a href="rentee_make_payment.php">Make Payment</a>
+                                <a href="rentee_make_payment.php">
+                                    <i class="fas fa-money-bill-wave"></i> Make Payment
+                                </a>
                             </li>
                             <li>
-                                <a href="submit_complain.php">Submit Complain</a>
+                                <a href="submit_complain.php">
+                                    <i class="fas fa-exclamation-circle"></i> Submit Complain
+                                </a>
                             </li>
                             <li>
-                                <a href="submit_complain.php">Update Information</a>
+                                <a href="update_information.php">
+                                    <i class="fas fa-user-edit"></i> Update Information
+                                </a>
                             </li>
                             <li>
-                                <a href="inform_manager.php">Inform Manager</a>
+                                <a href="inform_manager.php">
+                                    <i class="fas fa-info-circle"></i> Inform Manager
+                                </a>
                             </li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">Contact</a>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
                     </li>
                     <li>
                         <a href="#">
@@ -162,7 +158,7 @@ $RenteeName = $row['RenteeName'];
 
 
                 <?php
-                echo '<h1>Hi, ' . $RenteeName . ', Rentee!</h1>';
+                echo '<h1>Hi, '.$RenteeName.', Rentee!</h1>';
                 ;
                 ?>
 
