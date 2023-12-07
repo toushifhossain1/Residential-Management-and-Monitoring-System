@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sidebar 02</title>
+    <title>Servant</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -23,7 +23,7 @@
     }
 
     .container {
-        
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -96,24 +96,28 @@
         font-size: 24px;
         /* Adjust the size of the clock icon */
     }
+
     button {
-    background-color: #bfbfbf;
-    color: black;
-    border-radius: 20px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin: 0 auto;
-    display: block;
-    height: 50px;
-    width: 35%;
-    margin-top: 20px;
-}
-button:hover,
-button:active {
-    background-color: #d9d9d9; /* Change the background color on hover and click */
-    color: black; /* Change the text color on hover and click */
-}
+        background-color: #bfbfbf;
+        color: black;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin: 0 auto;
+        display: block;
+        height: 50px;
+        width: 35%;
+        margin-top: 20px;
+    }
+
+    button:hover,
+    button:active {
+        background-color: #d9d9d9;
+        /* Change the background color on hover and click */
+        color: black;
+        /* Change the text color on hover and click */
+    }
 </style>
 
 <body>
@@ -127,32 +131,32 @@ button:active {
                 </button>
             </div>
             <div class="p-4 pt-5">
-                <h1><a href="index.html" class="logo">RMMS</a></h1>
+                <h1><a href="#0" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle"><i
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i
                                 class="fas fa-home"></i>Homepage</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                        
+
                             <li>
-                                <a href="update_information.php."><i class="fas fa-user-edit"></i> Update Information</a>
+                                <a href="update_information.php."><i class="fas fa-user-edit"></i> Update
+                                    Information</a>
                             </li>
-                            
+
                         </ul>
                     </li>
                     <li>
-            <a href="#">
-              <i class="fas fa-info-circle"></i> About
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-envelope"></i> Contact
-            </a>
-          </li>
+                        <a href="../index.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
                     <li>
-                        <a href="#">
+                        <a href="../Form/ServiceForm.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../logIn.html">
                             <i class="fas fa-sign-out-alt"></i> Sign out
                         </a>
                     </li>
@@ -228,25 +232,25 @@ button:active {
                     </div>
                 </div>
 
-                
-                
-                    <button onclick="startTime()">Start Time</button>
-                    <button onclick="endTime()">End Time</button>
-                
-                
+
+
+                <button onclick="startTime()">Start Time</button>
+                <button onclick="endTime()">End Time</button>
+
+
             </div>
 
 
 
             <script>
-        
-        function startTime() {
-            // Implement logic to handle the payment submission
-        }
-        function endTime() {
-            // Implement logic to handle the payment submission
-        }
-    </script>
+
+                function startTime() {
+                    // Implement logic to handle the payment submission
+                }
+                function endTime() {
+                    // Implement logic to handle the payment submission
+                }
+            </script>
             <script src="path/to/bootstrap.js"></script>
             <script src="js/jquery.min.js"></script>
             <script src="js/popper.js"></script>

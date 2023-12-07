@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sidebar 02</title>
+    <title>Update Information</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -73,7 +73,7 @@
                 </button>
             </div>
             <div class="p-4 pt-5">
-                <h1><a href="index.html" class="logo">RMMS</a></h1>
+                <h1><a href="#0" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
@@ -82,33 +82,33 @@
                             <li>
                                 <a href="manager.php"><i class="fas fa-home"></i> Homepage</a>
                             </li>
-                           
-                            
+
+
                             <li>
                                 <a href="assigned_task.php">
-                                    <i class="fas fa-tasks"></i> Assigned Task 
+                                    <i class="fas fa-tasks"></i> Assigned Task
                                 </a>
                             </li>
                             <li>
                                 <a href="complain.php">
-                                <i class="fas fa-list-alt"></i> View Complain </a>
-                                   
-                            </li> 
+                                    <i class="fas fa-list-alt"></i> View Complain </a>
+
+                            </li>
 
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../index.html">
                             <i class="fas fa-info-circle"></i> About
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../Form/ServiceForm.html">
                             <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../logIn.html">
                             <i class="fas fa-sign-out-alt"></i> Sign out
                         </a>
                     </li>
