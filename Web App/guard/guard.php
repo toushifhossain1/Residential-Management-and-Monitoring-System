@@ -23,7 +23,7 @@
     }
 
     .container {
-        
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -96,24 +96,28 @@
         font-size: 24px;
         /* Adjust the size of the clock icon */
     }
+
     button {
-    background-color: #bfbfbf;
-    color: black;
-    border-radius: 20px;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin: 0 auto;
-    display: block;
-    height: 50px;
-    width: 35%;
-    margin-top: 20px;
-}
-button:hover,
-button:active {
-    background-color: #d9d9d9; /* Change the background color on hover and click */
-    color: black; /* Change the text color on hover and click */
-}
+        background-color: #bfbfbf;
+        color: black;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+        margin: 0 auto;
+        display: block;
+        height: 50px;
+        width: 35%;
+        margin-top: 20px;
+    }
+
+    button:hover,
+    button:active {
+        background-color: #d9d9d9;
+        /* Change the background color on hover and click */
+        color: black;
+        /* Change the text color on hover and click */
+    }
 </style>
 
 <body>
@@ -130,43 +134,37 @@ button:active {
                 <h1><a href="index.html" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                                class="fas fa-home"></i> Homepage</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                        
-                            <li>
-                                <a href="update_information.php">Update Information</a>
-                            </li>
-                            <li>
-                                <a href="inform_problem.php">Inform Problem</a>
-                            </li>
-                            <li>
-                                <a href="store_info.php">Store Information</a>
-                            </li>
-                            
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">About</a>
-                    </li>
-                    <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
 
+                            <li>
+                                <a href="update_information.php">
+                                    <i class="fas fa-user-edit"></i> Update Information
+                                </a>
+                            </li>
+                            <li>
+                                <a href="inform_problem.php">
+                                    <i class="fas fa-exclamation-triangle"></i> Inform Problem
+                                </a>
+                            </li>
+                            <li>
+                                <a href="store_info.php">
+                                    <i class="fas fa-database"></i> Store Information
+                                </a>
+                            </li>
+
+                        </ul>
+                    </li>
                     <li>
-                        <a href="#">Contact</a>
+                        <a href="#">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
                     </li>
                     <li>
                         <a href="#">
@@ -190,13 +188,13 @@ button:active {
 
 
                 <h3><i class="fas fa-book"></i> Rules Stated</h3>
-    <div class="rules-container">
-	
-        <p><b>New Rules (2023-12-01):</b></p>
-        <p>Please keep your room clean and tidy.</p>
-    </div>
-	<!--commitee proposals-->
-    
+                <div class="rules-container">
+
+                    <p><b>New Rules (2023-12-01):</b></p>
+                    <p>Please keep your room clean and tidy.</p>
+                </div>
+                <!--commitee proposals-->
+
 
 
 
@@ -231,25 +229,25 @@ button:active {
                     </div>
                 </div>
 
-                
-                
-                    <button onclick="storeInformation()">Store Information</button>
-                    <button onclick="informProblem()">Inform Problem</button>
-                
-                
+
+
+                <button onclick="storeInformation()">Store Information</button>
+                <button onclick="informProblem()">Inform Problem</button>
+
+
             </div>
 
 
 
             <script>
-        
-        function storeInformation() {
-            // Implement logic to handle the payment submission
-        }
-        function informProblem() {
-            // Implement logic to handle the payment submission
-        }
-    </script>
+
+                function storeInformation() {
+                    // Implement logic to handle the payment submission
+                }
+                function informProblem() {
+                    // Implement logic to handle the payment submission
+                }
+            </script>
             <script src="path/to/bootstrap.js"></script>
             <script src="js/jquery.min.js"></script>
             <script src="js/popper.js"></script>
