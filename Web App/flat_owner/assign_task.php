@@ -67,45 +67,41 @@
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
                         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Home</a>
+                            class="dropdown-toggle"> <i class="fas fa-tasks"></i> Assign Task </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
                         <li>
-                                <a href="flat_owner.php">Dashboard</a>
+                                <a href="flat_owner.php"><i
+                                class="fas fa-home"></i> Homepage</a>
                             </li>
-                        <li>
-                                <a href="decisions.php">Propose Decisions </a>
+                        
+                            <li>
+                                <a href="decisions.php">
+                                    <i class="fas fa-lightbulb"></i> Propose Decisions
+                                </a>
                             </li>
                             <li>
-                                <a href="make_payment.php">Make Payment</a>
+                                <a href="make_payment.php">
+                                    <i class="fas fa-money-bill-wave"></i> Make Payment
+                                </a>
                             </li>
                             <li>
-                                <a href="update_information.php">Update Information</a>
+                                <a href="update_information.php">
+                                    <i class="fas fa-user-edit"></i> Update Information
+                                </a>
                             </li>
                             
                            
                         </ul>
                     </li>
                     <li>
-                        <a href="#">About</a>
+                        <a href="#">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
                     </li>
                     <li>
-                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle">Pages</a>
-                        <ul class="collapse list-unstyled" id="pageSubmenu">
-                            <li>
-                                <a href="#">Page 1</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 2</a>
-                            </li>
-                            <li>
-                                <a href="#">Page 3</a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">Contact</a>
+                        <a href="#">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
                     </li>
                     <li>
                         <a href="#">
