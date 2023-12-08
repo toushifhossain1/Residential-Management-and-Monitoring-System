@@ -1,3 +1,9 @@
+<?php
+session_start();
+$UserID = $_SESSION['UserID'];
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -135,41 +141,63 @@
                     </div>
                     <div class="form-group">
                         <label for="enterTime" class="form-label">Enter Time</label>
-                        <input type="datetime-local" class="form-control" id="enterTime" name="enterTime" required>
+                        <input type="datetime-local" class="form-control" id="enterTime" name="enterTime">
                     </div>
                     <div class="form-group">
                         <label for="exitTime" class="form-label">Exit Time</label>
-                        <input type="datetime-local" class="form-control" id="exitTime" name="exitTime" required>
+                        <input type="datetime-local" class="form-control" id="exitTime" name="exitTime">
                     </div>
                     <button type="button" class="btn btn-primary" onclick="storeInformation(event)">Store
                         Information</button>
                 </form>
             </div>
 
+
         </div>
 
         <script>
             function storeInformation(event) {
-                // Prevent the default form submission
                 event.preventDefault();
 
-                // Get form values
                 const visitorName = document.getElementById("visitorName").value;
                 const contactNumber = document.getElementById("contactNumber").value;
                 const nid = document.getElementById("nid").value;
                 const enterTime = document.getElementById("enterTime").value;
                 const exitTime = document.getElementById("exitTime").value;
+                const UserID = "<?php echo $UserID; ?>";
 
-                // Perform AJAX request or any other logic to store the information
+                // Creating a FormData object to send form data
+                const formData = new FormData();
+                formData.append('visitorName', visitorName);
+                formData.append('contactNumber', contactNumber);
+                formData.append('nid', nid);
+                formData.append('enterTime', enterTime);
+                formData.append('exitTime', exitTime);
+                formData.append('UserID', UserID);
 
-                // Clear the form
-                clearForm();
-                alert('Visitor information has been stored!');
+                // Send data to the server using Fetch API
+                fetch('process_info.php', {
+                    method: 'POST',
+                    body: formData
+                })
+                    .then(response => {
+                        if (response.ok) {
+                            // Clear the form after successful submission
+                            clearForm();
+                            alert('Visitor information has been stored!');
+                        } else {
+                            throw new Error('Network response was not ok.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                    });
             }
 
             function clearForm() {
                 document.getElementById("visitorForm").reset();
             }
+
 
         </script>
         <script src="js/jquery.min.js"></script>
