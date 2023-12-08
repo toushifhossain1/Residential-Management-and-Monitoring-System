@@ -42,6 +42,9 @@
         <li>
           <a href="#contact"><span class="fa fa-envelope-o mr-3"></span> Contact Data</a>
         </li>
+        <li>
+          <a href="#sign-out"><span class="fa fa-sign-out mr-3" style="color:red"></span> Sign Out</a>
+        </li>
       </ul>
 
     </nav>
