@@ -1,3 +1,8 @@
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -163,67 +168,42 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-            <h3><i class="fas fa-gavel"></i> Propose Decision</h3>
 
-            <form id="decisionForm" action="#">
-                <div class="form-group">
-                    <b> <label for="decisionTitle">Decision Title:</label></b>
-                    <input type="text" class="form-control" id="decisionTitle"
-                        placeholder="Enter a brief title for the decision.">
-                </div>
+        <h3><i class="fas fa-gavel"></i> Propose Decision</h3>
 
-                <div class="form-group">
-                    <b><label for="decisionDescription">Decision Description:</label></b>
-                    <textarea class="form-control" id="decisionDescription" rows="5"
-                        placeholder="Please describe the decision proposal in detail."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <b><label for="decisionBenefits">Decision Benefits:</label></b>
-                    <textarea class="form-control" id="decisionBenefits" rows="3"
-                        placeholder="List the potential benefits of the proposed decision."></textarea>
-                </div>
-
-                <div class="form-group">
-                    <b><label for="decisionDrawbacks">Decision Drawbacks:</label></b>
-                    <textarea class="form-control" id="decisionDrawbacks" rows="3"
-                        placeholder="List any potential drawbacks or risks associated with the proposed decision."></textarea>
-                </div>
-                <div class="form-group">
-                    <b><label for="decisionDate">Decision Proposal Date:</label><b>
-                            <input type="date" class="form-control" id="decisionDate">
-                </div>
-
-
-                <button type="submit" class="btn btn-primary">Submit Decision Proposal</button>
-            </form>
-        </div>
-    </div>
+        <form id="decisionForm" action="decisions_process.php" method="POST">
+    <div class="form-group">
+        <label for="decisionTitle"><b>Decision Title:</b></label>
+        <input type="text" class="form-control" id="decisionTitle" name="decisionTitle" placeholder="Enter a brief title for the decision.">
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+    <div class="form-group">
+        <label for="decisionDescription"><b>Decision Description:</b></label>
+        <textarea class="form-control" id="decisionDescription" name="decisionDescription" rows="5" placeholder="Please describe the decision proposal in detail."></textarea>
+    </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('decisionForm');
-            form.addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent the default form submission
+    <div class="form-group">
+        <label for="decisionDate"><b>Decision Proposal Date:</b></label>
+        <input type="date" class="form-control" name="decisionDate"id="decisionDate">
+    </div>
 
-                // Clear the form fields
-                form.querySelectorAll('input, textarea').forEach(element => element.value = '');
+    <button type="submit" class="btn btn-primary">Submit Decision Proposal</button>
+</form>
 
-                // Display an alert message
-                alert('Your decision proposal has been submitted successfully!');
-            });
-        });
-    </script>
-    <script src="path/to/bootstrap.js"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+</div>
+</div>
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
 
 </body>
 
