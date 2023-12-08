@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sidebar 02</title>
+    <title>Store Information</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -72,15 +72,14 @@
                 </button>
             </div>
             <div class="p-4 pt-5">
-                <h1><a href="index.html" class="logo">RMMS</a></h1>
+                <h1><a href="#0" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle"> <i class="fas fa-database"></i> Store Information</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                                class="fas fa-database"></i> Store Information</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                                <a href="guard.php"><i
-                                class="fas fa-home"></i> Homepage</a>
+                            <li>
+                                <a href="guard.php"><i class="fas fa-home"></i> Homepage</a>
                             </li>
 
                             <li>
@@ -93,21 +92,21 @@
                                     <i class="fas fa-exclamation-triangle"></i> Inform Problem
                                 </a>
                             </li>
-                           
+
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../index.html">
                             <i class="fas fa-info-circle"></i> About
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../Form/ServiceForm.html">
                             <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../logIn.html">
                             <i class="fas fa-sign-out-alt"></i> Sign out
                         </a>
                     </li>
@@ -142,36 +141,37 @@
                         <label for="exitTime" class="form-label">Exit Time</label>
                         <input type="datetime-local" class="form-control" id="exitTime" name="exitTime" required>
                     </div>
-                    <button type="button" class="btn btn-primary" onclick="storeInformation(event)">Store Information</button>
+                    <button type="button" class="btn btn-primary" onclick="storeInformation(event)">Store
+                        Information</button>
                 </form>
             </div>
 
         </div>
 
-       <script>
-        function storeInformation(event) {
-  // Prevent the default form submission
-  event.preventDefault();
+        <script>
+            function storeInformation(event) {
+                // Prevent the default form submission
+                event.preventDefault();
 
-  // Get form values
-  const visitorName = document.getElementById("visitorName").value;
-  const contactNumber = document.getElementById("contactNumber").value;
-  const nid = document.getElementById("nid").value;
-  const enterTime = document.getElementById("enterTime").value;
-  const exitTime = document.getElementById("exitTime").value;
+                // Get form values
+                const visitorName = document.getElementById("visitorName").value;
+                const contactNumber = document.getElementById("contactNumber").value;
+                const nid = document.getElementById("nid").value;
+                const enterTime = document.getElementById("enterTime").value;
+                const exitTime = document.getElementById("exitTime").value;
 
-  // Perform AJAX request or any other logic to store the information
+                // Perform AJAX request or any other logic to store the information
 
-  // Clear the form
-  clearForm();
-  alert('Visitor information has been stored!');
-}
+                // Clear the form
+                clearForm();
+                alert('Visitor information has been stored!');
+            }
 
-function clearForm() {
-  document.getElementById("visitorForm").reset();
-}
+            function clearForm() {
+                document.getElementById("visitorForm").reset();
+            }
 
-       </script>
+        </script>
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
         <script src="js/bootstrap.min.js"></script>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sidebar 02</title>
+    <title>Assign task</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -63,17 +63,16 @@
                 </button>
             </div>
             <div class="p-4 pt-5">
-                <h1><a href="index.html" class="logo">RMMS</a></h1>
+                <h1><a href="#0" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle"> <i class="fas fa-tasks"></i> Assign Task </a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                                class="fas fa-tasks"></i> Assign Task </a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                                <a href="flat_owner.php"><i
-                                class="fas fa-home"></i> Homepage</a>
+                            <li>
+                                <a href="flat_owner.php"><i class="fas fa-home"></i> Homepage</a>
                             </li>
-                        
+
                             <li>
                                 <a href="decisions.php">
                                     <i class="fas fa-lightbulb"></i> Propose Decisions
@@ -89,22 +88,22 @@
                                     <i class="fas fa-user-edit"></i> Update Information
                                 </a>
                             </li>
-                            
-                           
+
+
                         </ul>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../index.html">
                             <i class="fas fa-info-circle"></i> About
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../Form/ServiceForm.html">
                             <i class="fas fa-envelope"></i> Contact
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="../logIn.html">
                             <i class="fas fa-sign-out-alt"></i> Sign out
                         </a>
                     </li>
@@ -123,7 +122,7 @@
 
             <form id="taskForm" action="assign_task_process.php" method="POST">
                 <div class="form-group">
-                   <b> <label for="taskDescription">Task Description:</label></b>
+                    <b> <label for="taskDescription">Task Description:</label></b>
 
 
                     <textarea class="form-control" id="taskDescription" name="taskDescription"rows="5"
@@ -131,14 +130,18 @@
                 </div>
 
                 <div class="form-group">
+
                    <b> <label for="taskLocation">Task Location:</label></b>
-                    <input type="text" class="form-control" id="taskLocation"name="taskLocation"
+                    <input type="text" class="form-control" id="taskLocation" name="taskLocation"
+
                         placeholder="Enter the location of the task.">
                 </div>
 
                 <div class="form-group">
+
                    <b> <label for="taskPriority">Task Priority:</label></b>
                     <select class="form-control" id="taskPriority" name="taskPriority">
+
                         <option value="Low">Low</option>
 
 
