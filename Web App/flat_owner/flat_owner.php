@@ -1,3 +1,40 @@
+
+<?php
+session_start();
+$UserID = $_SESSION['UserID'];
+$link = mysqli_connect("localhost", "root", "", "rmms");
+
+// Check connection
+if (!$link) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT fo.FlatOwnerName
+        FROM flatownerstate AS fos
+        JOIN flatowner AS fo ON fos.OwnershipIdentityNumber = fo.OwnershipIdentityNumber
+        WHERE fos.SOID = $UserID";
+
+$results = mysqli_query($link, $sql);
+
+if ($results) {
+    $row = mysqli_fetch_assoc($results);
+
+    // This code below gives the name of the Flat Owner
+    $flatOwner = $row['FlatOwnerName'];
+   
+} else {
+    echo "Error: " . mysqli_error($link);
+}
+
+// Close the connection
+mysqli_close($link);
+?>
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -164,7 +201,12 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
             <div class="container">
-                <h1>Hi, User!</h1>
+            <?php
+                echo '<h1>Hi, '.$flatOwner.' !</h1>';
+                ;
+                ?>
+
+               
                 <h3><i class="fas fa-file-alt"></i> Commitee Proposals</h3>
                 <div class="rules-container">
 

@@ -120,24 +120,28 @@
         <div id="content" class="p-4 p-md-5 pt-5">
             <h3><i class="fas fa-user-tie"></i> Assign Task To Manager</h3>
 
-            <form id="taskForm" action="#">
+            <form id="taskForm" action="assign_task_process.php" method="POST">
                 <div class="form-group">
                     <b> <label for="taskDescription">Task Description:</label></b>
 
 
-                    <textarea class="form-control" id="taskDescription" rows="5"
+                    <textarea class="form-control" id="taskDescription" name="taskDescription"rows="5"
                         placeholder="Please describe the task in detail."></textarea>
                 </div>
 
                 <div class="form-group">
-                    <b> <label for="taskLocation">Task Location:</label></b>
-                    <input type="text" class="form-control" id="taskLocation"
+
+                   <b> <label for="taskLocation">Task Location:</label></b>
+                    <input type="text" class="form-control" id="taskLocation" name="taskLocation"
+
                         placeholder="Enter the location of the task.">
                 </div>
 
                 <div class="form-group">
-                    <b> <label for="taskPriority">Task Priority:</label></b>
-                    <select class="form-control" id="taskPriority">
+
+                   <b> <label for="taskPriority">Task Priority:</label></b>
+                    <select class="form-control" id="taskPriority" name="taskPriority">
+
                         <option value="Low">Low</option>
 
 
@@ -158,7 +162,7 @@
 
 
                     <b><label for="taskDueDate">Task Due Date:</label></b>
-                    <input type="date" class="form-control" id="taskDueDate">
+                    <input type="date" class="form-control" id="taskDueDate" name="taskDueDate">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Submit Task</button>
@@ -172,28 +176,15 @@
 
 
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const form = document.getElementById('taskForm');
-            form.addEventListener('submit', function (event) {
-                event.preventDefault(); // Prevent the default form submission
+    
 
-                // Clear the form fields
-                form.querySelectorAll('input, textarea').forEach(element => element.value = '');
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-                // Display an alert message
-                alert('Your task has been submitted successfully!');
-            });
-        });
-    </script>
+<script src="js/jquery.min.js"></script>
+                <script src="js/popper.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/main.js"></script>
 
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
 
 </body>
 
