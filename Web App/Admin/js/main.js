@@ -76,6 +76,9 @@ jQuery.noConflict();
 				}
 			});
 
+		} else if (href === '#sign-out') {
+			window.location.href = '../logIn.html';
+
 		}
 	});
 

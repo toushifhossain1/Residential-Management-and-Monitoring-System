@@ -35,6 +35,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             case 'Servant':
                 header("Location: servant/servant.php");
                 break;
+            case 'Admin':
+                header("Location: Admin/index.php");
             default:
                 echo "Invalid Occupation";
         }
