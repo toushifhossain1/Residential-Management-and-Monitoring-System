@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Sidebar 02</title>
+    <title>Update Information</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -17,22 +17,25 @@
     body {
         margin: 0;
         padding: 0;
-        
+
     }
+
     h3 {
         color: blue;
         /* Blue color for greeting */
         text-align: center;
     }
+
     .container {
         max-width: 500px;
         margin: 0 auto;
         padding: 20px;
     }
+
     .btn-primary:active {
-  background-color: #198754 !important;
-  border-color: #198754 !important;
-}
+        background-color: #198754 !important;
+        border-color: #198754 !important;
+    }
 
 
     .form-group {
@@ -57,7 +60,6 @@
         cursor: pointer;
         margin-top: 10px;
     }
-    
 </style>
 
 <body>
@@ -71,18 +73,17 @@
                 </button>
             </div>
             <div class="p-4 pt-5">
-                <h1><a href="index.html" class="logo">RMMS</a></h1>
+                <h1><a href="#0" class="logo">RMMS</a></h1>
                 <ul class="list-unstyled components mb-5">
                     <li class="active">
-                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false"
-                            class="dropdown-toggle"> <i class="fas fa-user-edit"></i> Update Information</a>
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"> <i
+                                class="fas fa-user-edit"></i> Update Information</a>
                         <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                                <a href="rentee.php"><i
-                                class="fas fa-home"> </i> Homepage</a>
+                            <li>
+                                <a href="rentee.php"><i class="fas fa-home"> </i> Homepage</a>
                             </li>
-                        
-                        <li>
+
+                            <li>
                                 <a href="rentee_make_payment.php">
                                     <i class="fas fa-money-bill-wave"></i> Make Payment
                                 </a>
@@ -92,7 +93,7 @@
                                     <i class="fas fa-exclamation-circle"></i> Submit Complain
                                 </a>
                             </li>
-                          
+
                             <li>
                                 <a href="inform_manager.php">
                                     <i class="fas fa-info-circle"></i> Inform Manager
@@ -101,17 +102,17 @@
                         </ul>
                     </li>
                     <li>
-            <a href="#">
-              <i class="fas fa-info-circle"></i> About
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <i class="fas fa-envelope"></i> Contact
-            </a>
-          </li>
+                        <a href="../index.html">
+                            <i class="fas fa-info-circle"></i> About
+                        </a>
+                    </li>
                     <li>
-                        <a href="#">
+                        <a href="../Form/ServiceForm.html">
+                            <i class="fas fa-envelope"></i> Contact
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../logIn.html">
                             <i class="fas fa-sign-out-alt"></i> Sign out
                         </a>
                     </li>
@@ -126,99 +127,99 @@
 
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
-           
-                <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-                <form id="updateForm">
-                    <div class="form-group">
-                        <b><label for="phoneNum">Phone Number:</label></b>
-                        <input type="tel" class="form-control" id="phoneNum" placeholder="Enter your phone number">
+            <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-
-                    </div>
+            <form id="updateForm">
+                <div class="form-group">
+                    <b><label for="phoneNum">Phone Number:</label></b>
+                    <input type="tel" class="form-control" id="phoneNum" placeholder="Enter your phone number">
 
 
-
-                    <div class="form-group">
-
-
-                       <b> <label for="email">Email Address:</label></b>
-
-
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email address">
-
-
-                    </div>
+                </div>
 
 
 
-                    <div class="form-group">
+                <div class="form-group">
 
 
-                       <b> <label for="dob">Date of Birth:</label></b>
+                    <b> <label for="email">Email Address:</label></b>
 
 
-                        <input type="date" class="form-control" id="dob">
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email address">
 
 
-                    </div>
+                </div>
 
 
 
-                    <div class="form-group">
+                <div class="form-group">
 
 
-                       <b> <label for="occupation">Occupation:</label></b>
+                    <b> <label for="dob">Date of Birth:</label></b>
 
 
-                        <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation">
-                    </div>
-
-                    <div class="form-group">
-                       <b> <label for="paymentMobileNum">Payment Mobile Number:</label></b>
-                        <input type="tel" class="form-control" id="paymentMobileNum"
-                            placeholder="Enter your payment mobile number">
-                    </div>
-
-                    <div class="form-group">
-                       <b> <label for="paymentBankInfo">Payment Account Number:</label></b>
-                
-                            <input type="tel" class="form-control" id="paymentAccountNum"
-                            placeholder="Enter your payment Account number">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary">Submit Update Request</button>
+                    <input type="date" class="form-control" id="dob">
 
 
-                </form>
+                </div>
 
 
-          
+
+                <div class="form-group">
+
+
+                    <b> <label for="occupation">Occupation:</label></b>
+
+
+                    <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation">
+                </div>
+
+                <div class="form-group">
+                    <b> <label for="paymentMobileNum">Payment Mobile Number:</label></b>
+                    <input type="tel" class="form-control" id="paymentMobileNum"
+                        placeholder="Enter your payment mobile number">
+                </div>
+
+                <div class="form-group">
+                    <b> <label for="paymentBankInfo">Payment Account Number:</label></b>
+
+                    <input type="tel" class="form-control" id="paymentAccountNum"
+                        placeholder="Enter your payment Account number">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Update Request</button>
+
+
+            </form>
+
+
+
 
 
 
         </div>
         <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('updateForm').addEventListener('submit', function (event) {
-            event.preventDefault();
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('updateForm').addEventListener('submit', function (event) {
+                    event.preventDefault();
 
-            clearForm();
-            alert('Request has been sent!');
-            
-        });
+                    clearForm();
+                    alert('Request has been sent!');
 
-        function clearForm() {
-            document.getElementById('phoneNum').value = '';
-            document.getElementById('email').value = '';
-            document.getElementById('dob').value = '';
-            document.getElementById('occupation').value = '';
-            document.getElementById('paymentMobileNum').value = '';
-            document.getElementById('paymentAccountNum').value = '';
-        }
-    });
+                });
 
-    </script>
+                function clearForm() {
+                    document.getElementById('phoneNum').value = '';
+                    document.getElementById('email').value = '';
+                    document.getElementById('dob').value = '';
+                    document.getElementById('occupation').value = '';
+                    document.getElementById('paymentMobileNum').value = '';
+                    document.getElementById('paymentAccountNum').value = '';
+                }
+            });
+
+        </script>
 
         <script src="js/jquery.min.js"></script>
         <script src="js/popper.js"></script>
