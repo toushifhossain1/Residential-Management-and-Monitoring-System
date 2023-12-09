@@ -130,10 +130,10 @@
 
             <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-            <form id="updateForm">
+            <form id="updateForm" action="update_information_process.php" method="POST">
                 <div class="form-group">
                     <b><label for="phoneNum">Phone Number:</label></b>
-                    <input type="tel" class="form-control" id="phoneNum" placeholder="Enter your phone number">
+                    <input type="tel" class="form-control" id="phoneNum"name="phoneNum" placeholder="Enter your phone number">
 
 
                 </div>
@@ -146,7 +146,7 @@
                     <b> <label for="email">Email Address:</label></b>
 
 
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email address">
+                    <input type="email" class="form-control" id="email"name="email" placeholder="Enter your email address">
 
 
                 </div>
@@ -159,7 +159,7 @@
                     <b> <label for="dob">Date of Birth:</label></b>
 
 
-                    <input type="date" class="form-control" id="dob">
+                    <input type="date" class="form-control" id="dob" name="dob">
 
 
                 </div>
@@ -172,19 +172,19 @@
                     <b> <label for="occupation">Occupation:</label></b>
 
 
-                    <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation">
+                    <input type="text" class="form-control" id="occupation"name="occupation" placeholder="Enter your occupation">
                 </div>
 
                 <div class="form-group">
                     <b> <label for="paymentMobileNum">Payment Mobile Number:</label></b>
-                    <input type="tel" class="form-control" id="paymentMobileNum"
+                    <input type="tel" class="form-control" id="paymentMobileNum" name="paymentMobileNum"
                         placeholder="Enter your payment mobile number">
                 </div>
 
                 <div class="form-group">
                     <b> <label for="paymentBankInfo">Payment Account Number:</label></b>
 
-                    <input type="tel" class="form-control" id="paymentAccountNum"
+                    <input type="tel" class="form-control" id="paymentAccountNum"name="paymentAccountNum"
                         placeholder="Enter your payment Account number">
                 </div>
 
@@ -199,36 +199,13 @@
 
 
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                document.getElementById('updateForm').addEventListener('submit', function (event) {
-                    event.preventDefault();
-
-                    clearForm();
-                    alert('Request has been sent!');
-
-                });
-
-                function clearForm() {
-                    document.getElementById('phoneNum').value = '';
-                    document.getElementById('email').value = '';
-                    document.getElementById('dob').value = '';
-                    document.getElementById('occupation').value = '';
-                    document.getElementById('paymentMobileNum').value = '';
-                    document.getElementById('paymentAccountNum').value = '';
-                }
-            });
-
-        </script>
+        
 
         <script src="js/jquery.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-</body>
 
 </html>
