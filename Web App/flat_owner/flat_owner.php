@@ -24,6 +24,9 @@ if ($results) {
 } else {
     echo "Error: " . mysqli_error($link);
 }
+// Query to fetch the latest committee proposal from the proposals table
+$sqlFetchProposal = "SELECT DateOfRuleState, StatedRules FROM rules ORDER BY DateOfRuleState DESC LIMIT 1";
+$resultFetchProposal = mysqli_query($link, $sqlFetchProposal);
 
 // Close the connection
 mysqli_close($link);
@@ -214,7 +217,21 @@ mysqli_close($link);
                 </div>
 
 
+                <?php
+               
+                
+            if ($resultFetchProposal) {
+                $rowProposal = mysqli_fetch_assoc($resultFetchProposal);
 
+                // Display the fetched committee proposal in the HTML structure
+                echo '<div class="rules-container">';
+                echo '<p><b>New Proposals(' . $rowProposal['DateOfRuleState'] . '):</b></p>';
+                echo '<p>' . $rowProposal['StatedRules'] . '</p>';
+                echo '</div>';
+            } else {
+                echo "Error fetching committee proposal from database: " . mysqli_error($link);
+            }
+            ?>
 
 
                 <!-- Ongoing Meeting Section with a Users Icon -->
