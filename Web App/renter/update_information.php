@@ -124,33 +124,33 @@
 
             <h3><i class="fas fa-envelope"></i> Request for Update Information</h3>
 
-            <form id="updateForm">
+            <form id="updateForm" action="update_information_process.php" method="POST">
                 <div class="form-group">
                     <b><label for="leaseStartDate">Lease Start Date:</label></b>
-                    <input type="date" class="form-control" id="leaseStartDate"
+                    <input type="date" class="form-control" id="leaseStartDate" name="leaseStartDate"
                         placeholder="Enter your lease start date">
                 </div>
 
                 <div class="form-group">
                     <b><label for="monthlyRentAmount">Monthly Rent Amount:</label></b>
-                    <input type="number" class="form-control" id="monthlyRentAmount"
+                    <input type="number" class="form-control" id="monthlyRentAmount"name="monthlyRentAmount"
                         placeholder="Enter your monthly rent amount">
                 </div>
 
                 <div class="form-group">
                     <b><label for="occupation">Occupation:</label></b>
-                    <input type="text" class="form-control" id="occupation" placeholder="Enter your occupation">
+                    <input type="text" class="form-control" id="occupation"name="occupation" placeholder="Enter your occupation">
                 </div>
 
                 <div class="form-group">
                     <b><label for="paymentMobileNum">Payment Mobile Number:</label></b>
-                    <input type="tel" class="form-control" id="paymentMobileNum"
+                    <input type="tel" class="form-control" id="paymentMobileNum" name="paymentMobileNum"
                         placeholder="Enter your payment mobile number">
                 </div>
 
                 <div class="form-group">
                     <b><label for="paymentBankInfo">Payment Account Number:</label></b>
-                    <input type="tel" class="form-control" id="paymentAccountNum"
+                    <input type="tel" class="form-control" id="paymentAccountNum" name="paymentAccountNum"
                         placeholder="Enter your payment Account number">
                 </div>
 
@@ -163,30 +163,15 @@
 
 
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                const form = document.getElementById('updateForm');
-                form.addEventListener('submit', function (event) {
-                    event.preventDefault(); // Prevent the default form submission
+       
 
-                    // Clear the form fields
-                    form.querySelectorAll('input, textarea').forEach(element => element.value = '');
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-                    // Display an alert message
-                    alert('Your update request has been submitted successfully!');
-                });
-            });
+<script src="js/jquery.min.js"></script>
+                <script src="js/popper.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/main.js"></script>
 
-
-        </script>
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/popper.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-        <script src="js/main.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-            crossorigin="anonymous"></script>
 
 </body>
 
