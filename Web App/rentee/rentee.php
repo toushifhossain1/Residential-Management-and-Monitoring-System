@@ -158,8 +158,8 @@ $RenteeName = $row['RenteeName'];
 
 
                 <?php
-                echo '<h1>Hi, ' . $RenteeName . ', Rentee!</h1>';
-                ;
+                echo '<h1>Hi, ' . $RenteeName . '</h1>';
+                echo '<h5 style="color: #696969; margin-top:-2%;margin-left: 10px">Rentee</h5>';
                 ?>
 
 

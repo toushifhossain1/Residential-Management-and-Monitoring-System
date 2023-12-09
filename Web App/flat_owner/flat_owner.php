@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 $UserID = $_SESSION['UserID'];
@@ -21,7 +20,7 @@ if ($results) {
 
     // This code below gives the name of the Flat Owner
     $flatOwner = $row['FlatOwnerName'];
-   
+
 } else {
     echo "Error: " . mysqli_error($link);
 }
@@ -201,12 +200,12 @@ mysqli_close($link);
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
             <div class="container">
-            <?php
-                echo '<h1>Hi, '.$flatOwner.' !</h1>';
-                ;
+                <?php
+                echo '<h1>Hi, ' . $flatOwner . ' !</h1>';
+                echo '<h5 style="color: #696969; margin-top:-2%;margin-left: 10px">Flat Owner</h5>';
                 ?>
 
-               
+
                 <h3><i class="fas fa-file-alt"></i> Commitee Proposals</h3>
                 <div class="rules-container">
 

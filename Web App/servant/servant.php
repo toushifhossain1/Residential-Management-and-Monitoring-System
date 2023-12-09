@@ -1,3 +1,19 @@
+<?php
+session_start();
+$UserID = $_SESSION['UserID'];
+$link = mysqli_connect("localhost", "root", "", "rmms");
+$sql = "SELECT * FROM `servant` where ServantID = $UserID;";
+$results = mysqli_query($link, $sql);
+$row = mysqli_fetch_assoc($results);
+//This code below gives the name of the Rentee
+$ServantName = $row['ServantName'];
+//echo $ServantName;
+
+?>
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -172,11 +188,15 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
             <div class="container">
-                <h1>Hi, User!</h1>
+
+                <?php
+                echo '<h1>' . $ServantName . '</h1>';
+                echo '<h5 style="color: #696969; margin-top:-2%;margin-left: 10px">Servant</h5>';
+                ?>
 
 
 
-                <h3><i class="fas fa-clock"></i> Upcoming Work Schedule</h3>
+                <h3><i class=" fas fa-clock"></i> Upcoming Work Schedule</h3>
 
                 <div class="container">
                     <div class="servant-work-container table-responsive">

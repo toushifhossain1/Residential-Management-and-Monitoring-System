@@ -1,3 +1,16 @@
+<?php
+session_start();
+$UserID = $_SESSION['UserID'];
+$link = mysqli_connect("localhost", "root", "", "rmms");
+$sql = "SELECT * FROM `manager` where ManagerID = $UserID;";
+$results = mysqli_query($link, $sql);
+$row = mysqli_fetch_assoc($results);
+//This code below gives the name of the Rentee
+$ManagerName = $row['ManagerName'];
+//echo $GuardName;
+
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -147,7 +160,12 @@
         <div id="content" class="p-4 p-md-5 pt-5">
 
             <div class="container">
-                <h1>Hi, User!</h1>
+                <?php
+                echo '<h1>' . $ManagerName . '</h1>';
+                echo '<h5 style="color: #696969; margin-top:-2%;margin-left: 10px">Manager</h5>';
+                ?>
+
+
                 <h3><i class="fas fa-book"></i> Rules Stated</h3>
                 <div class="rules-container">
 
