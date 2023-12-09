@@ -197,8 +197,31 @@ $RenteeName = $row['RenteeName'];
 
                     <div>
 
-                        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>Start Time:</b> 09:00</p>
-                        <p><span class="clock-icon"><i class="fas fa-clock"></i></span><b>End Time:</b> 17:00</p>
+
+                        <p><span class="clock-icon"><i class="fas fa-clock"></i></span>
+                            <b>Start Time:</b>
+                            <?php
+                            $link = mysqli_connect("localhost", "root", "", "rmms");
+                            $sql = "SELECT `ServantWorkID`, `ServantID`, `RenteeID`, `OwnershipIdentityNumber`, `WorkStartTime`, `WorkEndTime` FROM `servantwork` WHERE RenteeID = '$UserID';";
+                            $result = mysqli_query($link, $sql);
+                            $row = mysqli_fetch_assoc($result);
+                            echo $row['WorkStartTime'];
+                            ?>
+                        </p>
+                        <p><span class="clock-icon"><i class="fas fa-clock"></i></span>
+                            <b>End Time:</b>
+                            <?php
+                            $link = mysqli_connect("localhost", "root", "", "rmms");
+                            $sql = "SELECT `ServantWorkID`, `ServantID`, `RenteeID`, `OwnershipIdentityNumber`, `WorkStartTime`, `WorkEndTime` FROM `servantwork` WHERE RenteeID = '$UserID';";
+                            $result = mysqli_query($link, $sql);
+                            $row = mysqli_fetch_assoc($result);
+                            echo $row['WorkEndTime'];
+                            ?>
+                        </p>
+
+
+
+
                     </div>
                 </div>
 
