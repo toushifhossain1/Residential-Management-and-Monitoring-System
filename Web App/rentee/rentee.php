@@ -166,31 +166,91 @@ $RenteeName = $row['RenteeName'];
                 <h3><i class="fas fa-book"></i> Rules</h3>
                 <div class="rules-container">
 
-                    <p><b>New Rules (2023-12-01):</b></p>
-                    <p>Please keep your room clean and tidy.</p>
+                    <?php
+                    $link = mysqli_connect("localhost", "root", "", "rmms");
+
+                    if ($link === false) {
+                        die("ERROR: Could not connect. " . mysqli_connect_error());
+                    }
+
+                    $sql = "SELECT `RulesStatedSurrogateKey`, `OwnershipIdentityNumber`, `ManagerID`, `RenteeID`, `GuardID`, `DateOfRuleState`, `StatedRules`, `Feedback` FROM `rules`";
+                    $result = mysqli_query($link, $sql);
+
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $dateOfRule = $row['DateOfRuleState'];
+                            $statedRules = $row['StatedRules'];
+                            ?>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <b>
+                                        <?php echo "New Rules (" . $dateOfRule . "):"; ?>
+                                    </b>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        <?php echo $statedRules; ?>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <?php
+                        }
+                        mysqli_free_result($result);
+                    } else {
+                        echo "ERROR: Could not execute $sql. " . mysqli_error($link);
+                    }
+
+                    mysqli_close($link);
+                    ?>
                 </div>
                 <h3><i class="fas fa-exclamation-circle"></i> Complain</h3>
+
                 <div class="complain-container">
 
-                    <div class="card">
+                    <?php
+                    $link = mysqli_connect("localhost", "root", "", "rmms");
 
-                        <div class="card-header">
-                            <b>2023-11-29
-                        </div></b>
-                        <div class="card-body">
-                            <p><b>Complaint:</b> The WiFi is slow.</p>
-                            <p><b>Feedback:</b> The WiFi has been upgraded and is now working properly.</p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header">
-                            <b>2023-11-30</b>
-                        </div>
-                        <div class="card-body">
-                            <p><b>Complaint:</b> The air conditioning is not working.</p>
-                            <p><b>Feedback:</b> The air conditioning has been repaired and is now working properly.</p>
-                        </div>
-                    </div>
+                    if ($link === false) {
+                        die("ERROR: Could not connect. " . mysqli_connect_error());
+                    }
+
+                    $sql = "SELECT `ComplainSurrogateKey`, `RenteeID`, `ComplainMessage`, `DateOfComplain`, `FeedbackOfComplain` FROM `complain`";
+                    $result = mysqli_query($link, $sql);
+
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $dateOfComplaint = $row['DateOfComplain'];
+                            $complaint = $row['ComplainMessage'];
+                            $feedback = $row['FeedbackOfComplain'];
+                            ?>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <b>
+                                        <?php echo $dateOfComplaint; ?>
+                                    </b>
+                                </div>
+                                <div class="card-body">
+                                    <p><b>Complaint:</b>
+                                        <?php echo $complaint; ?>
+                                    </p>
+                                    <p><b>Feedback:</b>
+                                        <?php echo $feedback; ?>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <?php
+                        }
+                        mysqli_free_result($result);
+                    } else {
+                        echo "ERROR: Could not execute $sql. " . mysqli_error($link);
+                    }
+
+                    mysqli_close($link);
+                    ?>
                 </div>
                 <h3><i class="fas fa-calendar-alt"></i> Servant Work Schedule</h3>
                 <div class="servant-work-container">

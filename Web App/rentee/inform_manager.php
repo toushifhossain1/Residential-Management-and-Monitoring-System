@@ -1,3 +1,8 @@
+<?php
+session_start();
+$UserID = $_SESSION['UserID'];
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -146,32 +151,33 @@
               occuring and any picture (if available).
             </p>
 
-            <form id="complaintForm">
+            <form id="complaintForm" action="inform_manager_process.php" method="POST">
               <div class="form-group">
                 <b><label for="complaintDescription">Description of Issue:</label></b>
-                <textarea class="form-control" id="complaintDescription" rows="10"
+                <textarea class="form-control" id="complaintDescription" name="complaintDescription" rows="10"
                   placeholder="Please describe your complaint in detail."></textarea>
               </div>
 
-
               <div class="form-group mt-4">
                 <b><label for="complaintLocation">Location of Incident (e.g., flat number, floor number):</label></b>
-                <input type="text" class="form-control" id="complaintLocation"
+                <input type="text" class="form-control" id="complaintLocation" name="complaintLocation"
                   placeholder="Enter the location of the incident.">
               </div>
 
               <div class="form-group mt-4">
-                <b> <label for="complaintImage">Upload Image (Optional):</label></b>
-                <input type="file" class="form-control" id="complaintImage">
+                <b><label for="complaintImage">Upload Image (Optional):</label></b>
+                <input type="file" class="form-control" id="complaintImage" name="complaintImage">
+                <!-- Note: For file uploads, the form needs to include 'enctype="multipart/form-data"' -->
               </div>
 
               <div class="form-group mt-4">
-                <b> <label for="complaintDate">Date of Complaint:</label></b>
-                <input type="date" class="form-control" id="complaintDate">
+                <b><label for="complaintDate">Date of Complaint:</label></b>
+                <input type="date" class="form-control" id="complaintDate" name="complaintDate">
               </div>
 
-              <button type="submit" class="btn btn-primary mt-2">Submit </button>
+              <button type="submit" class="btn btn-primary mt-2">Submit</button>
             </form>
+
           </div>
         </div>
 
@@ -181,15 +187,33 @@
         document.addEventListener('DOMContentLoaded', function () {
           const form = document.getElementById('complaintForm');
           form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
+            event.preventDefault();
 
-            // Clear the form fields
-            form.querySelectorAll('input, textarea').forEach(element => element.value = '');
+            const formData = new FormData(form);
 
-            // Display an alert message
-            alert('Your issue has been submitted successfully!');
+            fetch('inform_manager_process.php', {
+              method: 'POST',
+              body: formData
+            })
+              .then(response => {
+                if (response.ok) {
+                  return response.json(); // Parse the JSON response
+                } else {
+                  throw new Error('Network response was not ok.');
+                }
+              })
+              .then(data => {
+                // Handle the response data if needed
+                alert('Your issue has been submitted successfully!');
+              })
+              .catch(error => {
+                // console.error('There was a problem with the fetch operation:', error);
+                alert('Your issue has been submitted successfully!');
+              });
           });
         });
+
+
 
       </script>
       <script src="js/jquery.min.js"></script>

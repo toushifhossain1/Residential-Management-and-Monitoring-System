@@ -212,26 +212,48 @@ mysqli_close($link);
                 <h3><i class="fas fa-file-alt"></i> Commitee Proposals</h3>
                 <div class="rules-container">
 
-                    <p><b>New Proposals(2023-12-01):</b></p>
-                    <p>Please keep your room clean and tidy.</p>
+                    <?php
+                    $link = mysqli_connect("localhost", "root", "", "rmms");
+
+                    if ($link === false) {
+                        die("ERROR: Could not connect. " . mysqli_connect_error());
+                    }
+
+                    $sql = "SELECT `RulesStatedSurrogateKey`, `OwnershipIdentityNumber`, `ManagerID`, `RenteeID`, `GuardID`, `DateOfRuleState`, `StatedRules`, `Feedback` FROM `rules`";
+                    $result = mysqli_query($link, $sql);
+
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            $dateOfRule = $row['DateOfRuleState'];
+                            $statedRules = $row['StatedRules'];
+                            ?>
+
+                            <div class="card">
+                                <div class="card-header">
+                                    <b>
+                                        <?php echo "New Rules (" . $dateOfRule . "):"; ?>
+                                    </b>
+                                </div>
+                                <div class="card-body">
+                                    <p>
+                                        <?php echo $statedRules; ?>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <?php
+                        }
+                        mysqli_free_result($result);
+                    } else {
+                        echo "ERROR: Could not execute $sql. " . mysqli_error($link);
+                    }
+
+                    mysqli_close($link);
+                    ?>
                 </div>
 
 
-                <?php
-               
-                
-            if ($resultFetchProposal) {
-                $rowProposal = mysqli_fetch_assoc($resultFetchProposal);
 
-                // Display the fetched committee proposal in the HTML structure
-                echo '<div class="rules-container">';
-                echo '<p><b>New Proposals(' . $rowProposal['DateOfRuleState'] . '):</b></p>';
-                echo '<p>' . $rowProposal['StatedRules'] . '</p>';
-                echo '</div>';
-            } else {
-                echo "Error fetching committee proposal from database: " . mysqli_error($link);
-            }
-            ?>
 
 
                 <!-- Ongoing Meeting Section with a Users Icon -->

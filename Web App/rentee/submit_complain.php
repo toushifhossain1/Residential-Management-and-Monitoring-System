@@ -1,3 +1,7 @@
+<?php
+session_start();
+$UserID = $_SESSION['UserID'];
+?>
 <!doctype html>
 <html lang="en">
 
@@ -147,58 +151,66 @@
               renter. Thank you for your help in improving our services.
             </p>
 
-            <form id="complaintForm">
+            <form id="complaintForm" action="insert_complaint.php" method="post">
+              <input type="hidden" name="RenteeID" value="<?php echo $UserID; ?>">
               <div class="form-group">
                 <b><label for="complaintDescription">Description of Complaint:</label></b>
-                <textarea class="form-control" id="complaintDescription" rows="10"
+                <textarea class="form-control" id="complaintDescription" name="complaintDescription" rows="10"
                   placeholder="Please describe your complaint in detail."></textarea>
               </div>
 
-
               <div class="form-group mt-4">
                 <b><label for="complaintLocation">Location of Incident (e.g., flat number, floor number):</label></b>
-                <input type="text" class="form-control" id="complaintLocation"
+                <input type="text" class="form-control" id="complaintLocation" name="complaintLocation"
                   placeholder="Enter the location of the incident.">
               </div>
 
               <div class="form-group mt-4">
-                <b> <label for="complaintImage">Upload Image (Optional):</label></b>
-                <input type="file" class="form-control" id="complaintImage">
+                <b><label for="complaintImage">Upload Image (Optional):</label></b>
+                <input type="file" class="form-control" id="complaintImage" name="complaintImage">
               </div>
 
               <div class="form-group mt-4">
-                <b> <label for="complaintDate">Date of Complaint:</label></b>
-                <input type="date" class="form-control" id="complaintDate">
+                <b><label for="complaintDate">Date of Complaint:</label></b>
+                <input type="date" class="form-control" id="complaintDate" name="complaintDate">
               </div>
 
               <button type="submit" class="btn btn-primary mt-2">Submit Complaint</button>
             </form>
-          </div>
-        </div>
 
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const form = document.getElementById('complaintForm');
+                form.addEventListener('submit', function (event) {
+                  event.preventDefault(); // Prevent the default form submission
 
-      </div>
-      <script>
-        document.addEventListener('DOMContentLoaded', function () {
-          const form = document.getElementById('complaintForm');
-          form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent the default form submission
+                  // Send the form data using a fetch API or XMLHttpRequest
+                  fetch('insert_complaint.php', {
+                    method: 'POST',
+                    body: new FormData(form)
+                  })
+                    .then(response => response.text())
+                    .then(data => {
+                      // Clear the form fields on successful submission
+                      form.querySelectorAll('input, textarea').forEach(element => element.value = '');
+                      // Display the server response or an alert message
+                      alert(data); // You might receive a success or error message from the server
+                    })
+                    .catch(error => {
+                      console.error('Error:', error);
+                    });
+                });
+              });
+            </script>
 
-            // Clear the form fields
-            form.querySelectorAll('input, textarea').forEach(element => element.value = '');
-
-            // Display an alert message
-            alert('Your complaint has been submitted successfully!');
-          });
-        });
-      </script>
-      <script src="js/jquery.min.js"></script>
-      <script src="js/popper.js"></script>
-      <script src="js/bootstrap.min.js"></script>
-      <script src="js/main.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+            </script>
+            <script src="js/jquery.min.js"></script>
+            <script src="js/popper.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/main.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+              integrity="sha384-ka7Sk0Gln4gmtz2mlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+              crossorigin="anonymous"></script>
 
 </body>
 
