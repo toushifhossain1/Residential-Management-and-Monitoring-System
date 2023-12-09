@@ -121,46 +121,56 @@
 
       <h3><i class="fas fa-eye"></i> View Complaints</h3>
 
-      <div class="row">
-        <div class="col-md-12 mb-3">
-          <div class="card">
-            <div class="card-header">
-              <strong>Complaint by John Doe</strong>
-              <small class="float-end">Submitted on: 2023-12-05</small>
-            </div>
-            <div class="card-body">
-              <p><strong>Flat Number:</strong> 201</p>
-              <p><strong>Description:</strong> Leaky faucet in kitchen</p>
-              <p><strong>Location:</strong> Apartment 201</p>
-              <img src="https://example.com/images/leaky-faucet.png" class="img-fluid" alt="Leaky faucet image">
-              <div class="d-flex justify-content-end mt-3">
-                <button class="btn btn-primary">Mark as Resolved</button>
-                <button class="btn btn-primary">Assign to maintenance</button>
+
+      <?php
+      $link = mysqli_connect("localhost", "root", "", "rmms");
+
+      if ($link === false) {
+        die("Error: Could not connect." . mysqli_connect_error());
+      }
+
+      $sql = "SELECT renteeinformmanager.`RenteeID`, renteeinformmanager.`ComplainMessage`, renteeinformmanager.`DateOfComplain`, renteeinformmanager.`LocationOfIncident`, rentee.`RenteeName`,rentee.`FlatNo` FROM `renteeinformmanager` renteeinformmanager INNER JOIN `rentee` ON renteeinformmanager.`RenteeID` = rentee.`RenteeID`;";
+      $result = mysqli_query($link, $sql);
+      if ($result) {
+        while ($row = mysqli_fetch_assoc($result)) {
+          ?>
+          <div class="col-md-12 mb-3">
+            <div class="card">
+              <div class="card-header">
+                <strong>Complaint by
+                  <?php echo $row['RenteeName']; ?>
+                </strong>
+                <small class="float-end">Submitted on:
+                  <?php echo $row['DateOfComplain']; ?>
+                </small>
+              </div>
+              <div class="card-body">
+                <p><strong>Flat Number:</strong>
+                  <?php echo $row['FlatNo']; ?>
+                </p>
+                <p><strong>Description:</strong>
+                  <?php echo $row['ComplainMessage']; ?>
+                </p>
+                <p><strong>Location:</strong>
+                  <?php echo $row['LocationOfIncident']; ?>
+                </p>
+
+                <div class="d-flex justify-content-end mt-3">
+                  <button class="btn btn-primary">Mark as Resolved</button>
+                  <button class="btn btn-primary">Assign to maintenance</button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+          <?php
+        }
+        mysqli_free_result($result); // Free result set
+      } else {
+        echo "Error: Could not execute $sql." . mysqli_error($link);
+      }
 
-        <div class="col-md-12 mb-3">
-          <div class="card">
-            <div class="card-header">
-              <strong>Complaint by Jane Doe</strong>
-              <small class="float-end">Submitted on: 2023-12-04</small>
-            </div>
-            <div class="card-body">
-              <p><strong>Flat Number:</strong> 102</p>
-              <p><strong>Description:</strong> Broken window in living room</p>
-              <p><strong>Location:</strong> Apartment 102</p>
-              <img src="https://example.com/images/broken-window.png" class="img-fluid" alt="Broken window image">
-              <div class="d-flex justify-content-end mt-3">
-                <button class="btn btn-primary">Mark as Resolved</button>
-                <button class="btn btn-primary">Assign to maintenance</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
+      mysqli_close($link);
+      ?>
 
     </div>
 

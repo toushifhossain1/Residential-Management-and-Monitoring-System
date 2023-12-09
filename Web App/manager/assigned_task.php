@@ -105,75 +105,44 @@
             <table id="tasksTable" class="table table-striped">
                 <thead>
                     <tr>
-                        <th>Assigned by</th>
-                        <th>Flat Number</th>
-                        <th>Task Description</th>
+                        <th>Description</th>
                         <th>Location</th>
                         <th>Priority</th>
                         <th>Due Date</th>
-
-
-
-                    </tr>
-
-                    <tr>
-                        <td>Replace light bulb in hallway</td>
-                        <td>Apartment 303</td>
-                        <td>Low</td>
-                        <td>2023-12-25</td>
-                        <td>Jane Doe</td>
-                        <td>303</td>
-                    </tr>
-                    <tr>
-                        <td>Clean gutters and downspouts</td>
-                        <td>Building exterior</td>
-                        <td>Medium</td>
-                        <td>2024-01-05</td>
-                        <td>John Doe</td>
-                        <td>All residents</td>
-                    </tr>
-                    <tr>
-                        <td>Organize resident meeting</td>
-                        <td>Community room</td>
-                        <td>High</td>
-                        <td>2024-01-10</td>
-                        <td>Manager</td>
-                        <td>All residents</td>
-                    </tr>
-                    <tr>
-                        <td>Fix loose railing on stairs</td>
-                        <td>Stairwell</td>
-                        <td>High</td>
-                        <td>2023-12-20</td>
-                        <td>John Doe</td>
-                        <td>All residents</td>
-                    </tr>
-                    <tr>
-                        <td>Remove snow and ice from walkways</td>
-                        <td>Building exterior</td>
-                        <td>High</td>
-                        <td>Upon snowfall</td>
-                        <td>Manager</td>
-                        <td>All residents</td>
+                        <th>Assigned By</th>
+                        <th>Flat No</th>
                     </tr>
                 </thead>
 
 
                 <tbody>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
 
+                    <?php
+                    $link = mysqli_connect("localhost", "root", "", "rmms");
 
+                    if ($link === false) {
+                        die("Error: Could not connect." . mysqli_connect_error());
+                    }
 
-                    </tr>
+                    $sql = "SELECT * FROM managertask";
+                    $result = mysqli_query($link, $sql);
 
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<td>" . $row['TaskDescription'] . "</td>";
+                            echo "<td>" . $row['TaskLocation'] . "</td>";
+                            echo "<td>" . $row['TaskPriority'] . "</td>";
+                            echo "<td>" . $row['TaskDueDate'] . "</td>";
+                            echo "<td>" . $row['AssignedBy'] . "</td>";
+                            echo "<td>" . $row['FlatNo'] . "</td>";
+                        }
+                        mysqli_free_result($result); // Free result set
+                    } else {
+                        echo "Error: Could not execute $sql." . mysqli_error($link);
+                    }
 
-
+                    mysqli_close($link);
+                    ?>
                 </tbody>
 
 
