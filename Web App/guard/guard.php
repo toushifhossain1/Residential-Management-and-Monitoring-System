@@ -257,10 +257,10 @@ $GuardName = $row['GuardName'];
             <script>
 
                 function storeInformation() {
-                    // Implement logic to handle the payment submission
+                    window.location.href = 'store_info.php';
                 }
                 function informProblem() {
-                    // Implement logic to handle the payment submission
+                    window.location.href = 'inform_problem.php';
                 }
             </script>
             <script src="path/to/bootstrap.js"></script>

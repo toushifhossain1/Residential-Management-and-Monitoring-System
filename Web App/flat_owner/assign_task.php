@@ -125,21 +125,20 @@
                     <b> <label for="taskDescription">Task Description:</label></b>
 
 
-                    <textarea class="form-control" id="taskDescription" name="taskDescription"rows="5"
-                        placeholder="Please describe the task in detail."></textarea>
+                    <textarea class="form-control" id="taskDescription" name="taskDescription" rows="5"
+                        placeholder="Please describe the task in detail. (required)" required></textarea>
                 </div>
 
                 <div class="form-group">
 
-                   <b> <label for="taskLocation">Task Location:</label></b>
+                    <b> <label for="taskLocation">Task Location:</label></b>
                     <input type="text" class="form-control" id="taskLocation" name="taskLocation"
-
-                        placeholder="Enter the location of the task.">
+                        placeholder="Enter the location of the task. (required)" required>
                 </div>
 
                 <div class="form-group">
 
-                   <b> <label for="taskPriority">Task Priority:</label></b>
+                    <b> <label for="taskPriority">Task Priority:</label></b>
                     <select class="form-control" id="taskPriority" name="taskPriority">
 
                         <option value="Low">Low</option>
@@ -176,14 +175,14 @@
 
 
     </div>
-    
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/jquery.min.js"></script>
-                <script src="js/popper.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-                <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 
 
 </body>

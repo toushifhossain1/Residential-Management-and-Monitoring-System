@@ -1,8 +1,3 @@
-
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -169,40 +164,42 @@
         <!-- Page Content  -->
         <div id="content" class="p-4 p-md-5 pt-5">
 
-        <h3><i class="fas fa-gavel"></i> Propose Decision</h3>
+            <h3><i class="fas fa-gavel"></i> Propose Decision</h3>
 
-        <form id="decisionForm" action="decisions_process.php" method="POST">
-    <div class="form-group">
-        <label for="decisionTitle"><b>Decision Title:</b></label>
-        <input type="text" class="form-control" id="decisionTitle" name="decisionTitle" placeholder="Enter a brief title for the decision.">
+            <form id="decisionForm" action="decisions_process.php" method="POST">
+                <div class="form-group">
+                    <label for="decisionTitle"><b>Decision Title:</b></label>
+                    <input type="text" class="form-control" id="decisionTitle" name="decisionTitle"
+                        placeholder="Enter a brief title for the decision. (required)" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="decisionDescription"><b>Decision Description:</b></label>
+                    <textarea class="form-control" id="decisionDescription" name="decisionDescription" rows="5"
+                        placeholder="Please describe the decision proposal in detail. (required)" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="decisionDate"><b>Decision Proposal Date:</b></label>
+                    <input type="date" class="form-control" name="decisionDate" id="decisionDate" required>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit Decision Proposal</button>
+            </form>
+
+        </div>
+    </div>
     </div>
 
-    <div class="form-group">
-        <label for="decisionDescription"><b>Decision Description:</b></label>
-        <textarea class="form-control" id="decisionDescription" name="decisionDescription" rows="5" placeholder="Please describe the decision proposal in detail."></textarea>
-    </div>
-
-    <div class="form-group">
-        <label for="decisionDate"><b>Decision Proposal Date:</b></label>
-        <input type="date" class="form-control" name="decisionDate"id="decisionDate">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit Decision Proposal</button>
-</form>
-
-</div>
-</div>
-</div>
 
 
 
 
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 
 
 </body>

@@ -155,13 +155,13 @@ $UserID = $_SESSION['UserID'];
               <div class="form-group">
                 <b><label for="complaintDescription">Description of Issue:</label></b>
                 <textarea class="form-control" id="complaintDescription" name="complaintDescription" rows="10"
-                  placeholder="Please describe your complaint in detail."></textarea>
+                  placeholder="Please describe your complaint in detail. (required)" required></textarea>
               </div>
 
               <div class="form-group mt-4">
                 <b><label for="complaintLocation">Location of Incident (e.g., flat number, floor number):</label></b>
                 <input type="text" class="form-control" id="complaintLocation" name="complaintLocation"
-                  placeholder="Enter the location of the incident.">
+                  placeholder="Enter the location of the incident. (required)" required>
               </div>
 
               <div class="form-group mt-4">

@@ -265,8 +265,7 @@ mysqli_close($link);
                     <div class="card">
                         <div class="row  mt-2 mb-2 ">
                             <div class="col-md-4 d-flex align-items-center">
-                                <p class="mb-0"><strong class="text-center"> &nbsp; &nbsp; Ongoing meeting
-                                        (1hr:2m:2s)</strong></p>
+                                <p class="mb-0"><strong class="text-center"> &nbsp; &nbsp; Ongoing meeting</strong></p>
                             </div>
                             <div class="col-md-8">
                                 <a href="https://meet.google.com/jce-nkmk-pdc" class="btn btn-primary">Join Meeting <i

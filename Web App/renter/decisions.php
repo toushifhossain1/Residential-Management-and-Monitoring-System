@@ -163,19 +163,19 @@
                 <div class="form-group">
                     <b> <label for="decisionTitle">Decision Title:</label></b>
                     <input type="text" class="form-control" id="decisionTitle" name="decisionTitle"
-                        placeholder="Enter a brief title for the decision.">
+                        placeholder="Enter a brief title for the decision. (required)" required>
                 </div>
 
                 <div class="form-group">
                     <b><label for="decisionDescription">Decision Description:</label></b>
                     <textarea class="form-control" id="decisionDescription" name="decisionDescription" rows="5"
-                        placeholder="Please describe the decision proposal in detail."></textarea>
+                        placeholder="Please describe the decision proposal in detail. (required)" required></textarea>
                 </div>
 
-                
+
                 <div class="form-group">
                     <b><label for="decisionDate">Decision Proposal Date:</label><b>
-                            <input type="date" class="form-control" id="decisionDate" name="decisionDate">
+                            <input type="date" class="form-control" id="decisionDate" name="decisionDate" required>
                 </div>
 
 
@@ -185,13 +185,13 @@
     </div>
     </div>
 
-   
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
-<script src="js/jquery.min.js"></script>
-                <script src="js/popper.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-                <script src="js/main.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 
 
 </body>
