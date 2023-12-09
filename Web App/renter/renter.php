@@ -2,12 +2,31 @@
 session_start();
 $UserID = $_SESSION['UserID'];
 $link = mysqli_connect("localhost", "root", "", "rmms");
-$sql = "SELECT * FROM `renter` where renterID = $UserID;";
+
+// Check connection
+if (!$link) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+$sql = "SELECT fo.FlatOwnerName
+        FROM flatownerstate AS fos
+        JOIN flatowner AS fo ON fos.OwnershipIdentityNumber = fo.OwnershipIdentityNumber
+        WHERE fos.RenterID = $UserID";
+
 $results = mysqli_query($link, $sql);
-$row = mysqli_fetch_assoc($results);
-//This code below gives the name of the Rentee
-$RenterName = $row['RenterName'];
+
+if ($results) {
+    $row = mysqli_fetch_assoc($results);
+
+    // This code below gives the name of the Flat Owner
+    $RenterName = $row['FlatOwnerName'];
+
+} else {
+    echo "Error: " . mysqli_error($link);
+}
 //echo $RenterName;
+$sqlFetchProposal = "SELECT DateOfRuleState, StatedRules FROM rules ORDER BY DateOfRuleState DESC LIMIT 1";
+$resultFetchProposal = mysqli_query($link, $sqlFetchProposal);
 
 ?>
 
@@ -174,8 +193,8 @@ $RenterName = $row['RenterName'];
             <div class="container">
 
                 <?php
-                echo '<h1>' . $RenterName . '</h1>';
-                echo '<h5 style="color: #696969; margin-top:-2%;margin-left: 10px">Renter</h5>';
+                echo '<h1>Hi, ' . $RenterName . ' !</h1>';
+                
                 ?>
 
                 <h3><i class="fas fa-file-alt"></i> Commitee Proposals</h3>
@@ -185,8 +204,22 @@ $RenterName = $row['RenterName'];
                     <p>Please keep your room clean and tidy.</p>
                 </div>
 
-
-
+                <?php
+               
+                
+               if ($resultFetchProposal) {
+                   $rowProposal = mysqli_fetch_assoc($resultFetchProposal);
+   
+                   // Display the fetched committee proposal in the HTML structure
+                   echo '<div class="rules-container">';
+                   echo '<p><b>New Proposals(' . $rowProposal['DateOfRuleState'] . '):</b></p>';
+                   echo '<p>' . $rowProposal['StatedRules'] . '</p>';
+                   echo '</div>';
+               } else {
+                   echo "Error fetching committee proposal from database: " . mysqli_error($link);
+               }
+               ?>
+            
 
 
                 <!-- Ongoing Meeting Section with a Users Icon -->
@@ -202,13 +235,17 @@ $RenterName = $row['RenterName'];
                                         (1hr:2m:2s)</strong></p>
                             </div>
                             <div class="col-md-8">
-                                <a href="meeting-link" class="btn btn-primary">Join Meeting <i
+                                <a href="https://meet.google.com/jce-nkmk-pdc" class="btn btn-primary">Join Meeting <i
                                         class="fas fa-video"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
 
+
+
+
+               
 
 
 
