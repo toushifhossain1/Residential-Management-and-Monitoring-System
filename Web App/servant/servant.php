@@ -251,31 +251,80 @@ $ServantName = $row['ServantName'];
                         </table>
                     </div>
                 </div>
+                <br>
 
 
 
-                <button onclick="startTime()">Start Time</button>
-                <button onclick="endTime()">End Time</button>
+
+                <!-- Select box for Flat No and Button -->
+                <b><label for="Flat">Flat No:</label></b>
+                <select class="form-control" id="Flat" name="Flat">
+                    <!-- Options loaded dynamically using PHP -->
+                    <?php
+                    $link = mysqli_connect("localhost", "root", "", "rmms");
+                    $sql = "SELECT * FROM `flat`";
+                    $result = mysqli_query($link, $sql);
+
+                    if ($result) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<option value='" . $row['FlatNo'] . "'>" . $row['FlatNo'] . "</option>";
+                        }
+                    } else {
+                        echo "Error: Could not execute $sql." . mysqli_error($link);
+                    }
+                    ?>
+                </select>
+
+                <!-- Button to toggle Start/End Time -->
+                <button id="timeButton" onclick="toggleTime()">Start Time</button>
+
+                <script>
+                    let isStartTime = true;
+
+                    function toggleTime() {
+                        const flatNo = document.getElementById("Flat").value;
+                        const buttonText = document.getElementById("timeButton");
+                        const servantID = "<?php echo $UserID; ?>"; // Getting ServantID from PHP
+
+                        if (isStartTime) {
+                            // AJAX request to store start time
+                            const xhttp = new XMLHttpRequest();
+                            xhttp.onreadystatechange = function () {
+                                if (this.readyState === 4 && this.status === 200) {
+                                    console.log(this.responseText); // Log response from server
+                                    buttonText.textContent = "End Time";
+                                    isStartTime = false;
+                                }
+                            };
+                            xhttp.open("POST", "update_servantwork.php", true); // Replace with your PHP file handling start time
+                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xhttp.send("flatNo=" + flatNo + "&servantID=" + servantID); // Include ServantID in the request
+                        } else {
+                            // AJAX request to store end time
+                            const xhttp = new XMLHttpRequest();
+                            xhttp.onreadystatechange = function () {
+                                if (this.readyState === 4 && this.status === 200) {
+                                    console.log(this.responseText); // Log response from server
+                                    buttonText.textContent = "Start Time";
+                                    isStartTime = true;
+                                }
+                            };
+                            xhttp.open("POST", "update_servantwork.php", true); // Replace with your PHP file handling end time
+                            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                            xhttp.send("flatNo=" + flatNo + "&servantID=" + servantID); // Include ServantID in the request
+                        }
+                    }
+                </script>
 
 
-            </div>
 
 
 
-            <script>
-
-                function startTime() {
-                    // Implement logic to handle the payment submission
-                }
-                function endTime() {
-                    // Implement logic to handle the payment submission
-                }
-            </script>
-            <script src="path/to/bootstrap.js"></script>
-            <script src="js/jquery.min.js"></script>
-            <script src="js/popper.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/main.js"></script>
+                <script src="path/to/bootstrap.js"></script>
+                <script src="js/jquery.min.js"></script>
+                <script src="js/popper.js"></script>
+                <script src="js/bootstrap.min.js"></script>
+                <script src="js/main.js"></script>
 
 </body>
 
