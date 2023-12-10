@@ -129,12 +129,14 @@
 
                     if ($result) {
                         while ($row = mysqli_fetch_assoc($result)) {
+                            echo "<tr>";
                             echo "<td>" . $row['TaskDescription'] . "</td>";
                             echo "<td>" . $row['TaskLocation'] . "</td>";
                             echo "<td>" . $row['TaskPriority'] . "</td>";
                             echo "<td>" . $row['TaskDueDate'] . "</td>";
                             echo "<td>" . $row['AssignedBy'] . "</td>";
                             echo "<td>" . $row['FlatNo'] . "</td>";
+                            echo "</tr>";
                         }
                         mysqli_free_result($result); // Free result set
                     } else {
